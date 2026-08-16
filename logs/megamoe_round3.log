@@ -1,0 +1,160 @@
+W0813 04:23:29.950000 22582 site-packages/torch/distributed/run.py:874] 
+W0813 04:23:29.950000 22582 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 04:23:29.950000 22582 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 04:23:29.950000 22582 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+BITEXACT rank=2 exact=True max|d|=0
+BITEXACT rank=3 exact=True max|d|=0
+BITEXACT rank=7 exact=True max|d|=0
+BITEXACT rank=1 exact=True max|d|=0
+BITEXACT rank=5 exact=True max|d|=0
+BITEXACT rank=4 exact=True max|d|=0
+BITEXACT rank=0 exact=True max|d|=0BITEXACT rank=6 exact=True max|d|=0
+
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3369 n=30BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3369 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3369 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3369 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3369 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3369 n=30
+
+
+
+
+
+BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3369 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3369 n=30
+
+[rank0]:[W813 04:23:56.417986704 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+r3 [--knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2)]: 0
+W0813 04:24:00.258000 22920 site-packages/torch/distributed/run.py:874] 
+W0813 04:24:00.258000 22920 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 04:24:00.258000 22920 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 04:24:00.258000 22920 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 2, 'epi_flag_batch': (2, 4), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+BITEXACT rank=2 exact=True max|d|=0
+BITEXACT rank=7 exact=True max|d|=0
+BITEXACT rank=6 exact=True max|d|=0
+BITEXACT rank=0 exact=True max|d|=0
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+BITEXACT rank=4 exact=True max|d|=0
+BITEXACT rank=3 exact=True max|d|=0
+BITEXACT rank=1 exact=True max|d|=0
+BITEXACT rank=5 exact=True max|d|=0
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+
+
+
+
+
+BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+[rank0]:[W813 04:24:25.351446219 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+r3 [--knob mma_tiler_mnk=(256,64,256) --knob flag_batch=2]: 0
+W0813 04:24:29.599000 23265 site-packages/torch/distributed/run.py:874] 
+W0813 04:24:29.599000 23265 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 04:24:29.599000 23265 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 04:24:29.599000 23265 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (128, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (2, 4), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+BITEXACT rank=5 exact=True max|d|=0
+BITEXACT rank=4 exact=True max|d|=0
+BITEXACT rank=1 exact=True max|d|=0
+BITEXACT rank=2 exact=True max|d|=0
+BITEXACT rank=6 exact=True max|d|=0
+BITEXACT rank=0 exact=True max|d|=0
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+BITEXACT rank=7 exact=True max|d|=0BITEXACT rank=3 exact=True max|d|=0
+
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3420 n=30BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3420 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3420 n=30
+BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3420 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3420 n=30
+
+BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3420 n=30
+
+
+BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3420 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3420 n=30
+
+[rank0]:[W813 04:24:56.811774825 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+r3 [--knob mma_tiler_mnk=(128,64,256)]: 0
+W0813 04:24:59.780000 23603 site-packages/torch/distributed/run.py:874] 
+W0813 04:24:59.780000 23603 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 04:24:59.780000 23603 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 04:24:59.780000 23603 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 1), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+BITEXACT rank=2 exact=True max|d|=0
+BITEXACT rank=0 exact=True max|d|=0
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+BITEXACT rank=6 exact=True max|d|=0BITEXACT rank=3 exact=True max|d|=0
+
+BITEXACT rank=1 exact=True max|d|=0
+BITEXACT rank=7 exact=True max|d|=0
+BITEXACT rank=5 exact=True max|d|=0
+BITEXACT rank=4 exact=True max|d|=0
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+
+BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3370 n=30
+
+[rank0]:[W813 04:25:24.339469078 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+r3 [--knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,1)]: 0

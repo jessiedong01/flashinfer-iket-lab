@@ -1,0 +1,30 @@
+[run-iket] ============= Dry run application first to collect some info... =============
+W0813 04:39:01.847000 26283 site-packages/torch/distributed/run.py:874] 
+W0813 04:39:01.847000 26283 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 04:39:01.847000 26283 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 04:39:01.847000 26283 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=profile tokens=2048 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+MANIFEST exec=0 tokens=2048 combine=bf16 ikr=False
+[rank0]:[W813 04:39:28.306071496 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[run-iket] Auto-computed context buffer size: 1.67 GB (1,792,707,583 bytes)
+[run-iket] ============= Run application for real profiling... =============
+W0813 04:39:32.661000 26645 site-packages/torch/distributed/run.py:874] 
+W0813 04:39:32.661000 26645 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 04:39:32.661000 26645 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 04:39:32.661000 26645 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=profile tokens=2048 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+MANIFEST exec=0 tokens=2048 combine=bf16 ikr=False
+[rank0]:[W813 04:40:01.686592319 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x685c.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x685f.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x685b.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x6861.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x6862.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x685e.trace.json
+[run-iket] Warning: decoded_results.json missing stringTable or locationTable. This may indicate an older C++ injection library was used.
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x6815.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x6860.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket_pid_0x685d.trace.json
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/megamoe_m2048_bf16/tracker
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/megamoe_m2048_bf16/gen-config
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/megamoe_m2048_bf16/iket

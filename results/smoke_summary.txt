@@ -1,0 +1,34 @@
+
+=== out/smoke/iket_pid_0xa61.trace.json (1 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_TiledMMA_ThrLayoutVMNK21111000_PermutationMNK___
+  grid=(4,4,1) block=(224,1,1) warps=112 markers=0 wall(first-warp-start -> last-warp-end)=4.3 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  kernel_e2e            112      312.3     2788.3       3456       3776       3776
+  epi_main               64      180.5     2820.5       2848       3008       3040
+  epi_tile               64      154.2     2409.5       2400       2592       2592
+  epi_subtile           512       94.7      185.0        192        192        192
+  prologue              112       52.4      468.3        480        512        512
+  epi_acc_wait           64       41.8      653.5        640        832        832
+  mma_main               16       26.5     1658.0       2656       2848       2848
+  tma_main               16       19.0     1190.0       1248       1280       1280
+  epi_tmem_wait          64       16.5      257.5        288        448        480
+  epi_smem_store        512       15.0       29.2         32         64         64
+  epi_tmem_load         512        7.2       14.1          0         32         32
+  epi_store_wait        512        6.7       13.0          0         32         32
+  sched_main              2        5.8     2896.0       2816       2976       2976
+  mma_tmem_wait          16        5.1      318.0        352        512        512
+  tma_tile               16        5.0      310.0        320        320        320
+  mma_tile               16        4.9      308.0        416        640        640
+  mma_k_tile              8        2.7      332.0        384        448        448
+  epi_tma_store         128        2.5       19.8         32         32         32
+  tma_k_tile             16        2.0      128.0        128        160        160
+  mma_ab_wait             8        1.9      240.0        288        352        352
+  tma_wait               16        0.7       46.0         32         64         64
+  tma_issue              16        0.5       32.0         32         32         32
+  sched_tile              2        0.4      224.0        192        256        256
+  mma_acc_wait            8        0.4       44.0         64         64         64
+  sched_wait              2        0.3      160.0        128        192        192
+  mma_issue               8        0.3       32.0         32         64         64
+  mma_commit              8        0.2       28.0         32         32         32
+  sched_issue             2        0.1       32.0         32         32         32

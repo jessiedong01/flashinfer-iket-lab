@@ -1,0 +1,30 @@
+
+=== out/megamoe_m2048_bf16/iket_pid_0x6815.trace.json (0 instrumented launches) ===
+
+=== out/megamoe_m2048_bf16/iket_pid_0x685b.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_fc1fc2_kernel_impl_moe_nvfp4_swapabmegamoe_kernelSm100M
+  grid=(2,1,74) block=(384,1,1) warps=1776 markers=0 wall(first-warp-start -> last-warp-end)=610.5 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  tma_weight_fc1       3456    47697.6    13801.4      12288      55232      58400
+  tma_token_fc1        3456    47687.6    13798.5      12256      55264      58496
+  fc1_epi             13824    45877.6     3318.7       3744       6624       9120
+  fc2_epi             16128    33789.2     2095.1       2560       4064       8992
+  mma_fc1              3456    24024.3     6951.5       5536      55584      60608
+  produce_tile_id      7636    23096.3     3024.7       1536      66048      66144
+  tma_weight_fc2       4032    22014.9     5460.1       4576      29888      38528
+  tma_token_fc2        4032    22014.7     5460.0       4576      29920      38496
+  mma_fc2              4032    11169.9     2770.3       2208      24928      38944
+  tma_token_fc1_wait      592     6559.6    11080.3        448      43552      45376
+  tma_token_fc2_wait      336     3817.7    11362.1       6112      32352      32768
+  mma_acquire          3744     1625.9      434.3        384       2304       5152
+  Dispatch_Pull           1      180.3   180320.0     180320     180320     180320
+  token_back             25      153.3     6133.8       6496       8608       8608
+  Token_Back_By_Push        1       66.3    66304.0      66304      66304      66304
+  Dispatch_Barrier        1       60.2    60160.0      60160      60160      60160
+  Pull.TMA_NVLink_Roundtrip       21       52.1     2480.8       2784       4160       4160
+  Pull.Weight_LDG        21       41.5     1977.9       2240       3552       3552
+  Pull.ChooseToken       22       27.4     1245.1        928       4640       4640
+  Pull.Arrival_Atomic       21       12.6      600.4        320       5312       5312
+  Pull.TMA_Store         21        7.4      350.5        384        608        608
+  Dispatch_Prep           1        3.6     3616.0       3616       3616       3616

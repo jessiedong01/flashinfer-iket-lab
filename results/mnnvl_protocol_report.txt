@@ -1,0 +1,52 @@
+== span per (m, protocol), latin executions pooled across ranks ==
+     m  proto  reps   mean_us   min_us   max_us
+     8     bt     3     144.4    120.4    163.8
+     8     ht     3      20.2     18.2     21.3
+     8     ll     3      96.8     70.0    113.8
+    32     bt     3     170.8    154.0    186.0
+    32     ht     3      20.2     16.3     27.6
+    32     ll     3      76.1     71.9     78.6
+   256     bt     3     255.0    146.7    457.1
+   256     ht     3      61.9     33.5     81.6
+   256     ll     3     103.1     95.3    109.0
+  1024     bt     3     628.5    189.5   1258.2
+  1024     ht     3     144.3     61.3    302.6
+  1024     ll     3     300.7    291.2    315.5
+  4096     ht     4     187.6    174.5    218.1
+  4096     ll     4     985.8    837.4   1041.0
+  8192     ht     4     344.9    318.6    374.7
+  8192     ll     4    1740.9   1247.3   2030.8
+
+== span by Latin-square position (order-effect check) ==
+     m  proto pos0_us pos1_us pos2_us
+     8     bt   120.4   163.8   149.0
+     8     ht    21.3    21.0    18.2
+     8     ll   113.8    70.0   106.7
+    32     bt   186.0   154.0   172.5
+    32     ht    16.3    27.6    16.9
+    32     ll    77.8    71.9    78.6
+   256     bt   457.1   146.7   161.1
+   256     ht    70.6    81.6    33.5
+   256     ll   109.0    95.3   105.1
+  1024     bt   189.5  1258.2   437.9
+  1024     ht   302.6    61.3    69.0
+  1024     ll   291.2   295.5   315.5
+  4096     ht   176.6   198.5       -
+  4096     ll  1032.4   939.2       -
+  8192     ht   346.8   342.9       -
+  8192     ll  1555.6  1926.1       -
+
+== LL lamport kernel phase means (ns per warp) ==
+     m    lamport_e2e     norm_store       pdl_wait        preload     rms_reduce sentinel_clear    spin_reduce
+     8           2729             38              8            266            801            160           1365
+    32           3012             40             10            283           1078            160           1325
+   256           6126             56             16            581           2608            193           2403
+  1024           6834             53             21            999           2660            147           2743
+  4096           9228             53             17           1079           2815            136           4932
+  8192           6738             54             17           1104           2792            135           2447
+
+== BT owner-reduce spin (bt_spin_reduce) mean ns per warp ==
+  m=8      mean=       724 p_max=       864
+  m=32     mean=     13172 p_max=     38688
+  m=256    mean=       867 p_max=      1280
+  m=1024   mean=     55815 p_max=    247264

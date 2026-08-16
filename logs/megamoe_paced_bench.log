@@ -1,0 +1,119 @@
+W0813 07:36:07.000000 38575 site-packages/torch/distributed/run.py:874] 
+W0813 07:36:07.000000 38575 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:36:07.000000 38575 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:36:07.000000 38575 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=9.0825 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=9.0887 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=4.6282 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=9.0869 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=4.6336 n=30BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=9.0813 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=9.0820 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=9.0881 n=30
+
+
+
+
+
+
+
+[rank0]:[W813 07:36:34.574164618 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --paced]: 0
+W0813 07:36:37.143000 38914 site-packages/torch/distributed/run.py:874] 
+W0813 07:36:37.143000 38914 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:36:37.143000 38914 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:36:37.143000 38914 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3450 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3427 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3421 n=30BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3403 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3380 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3402 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3450 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3403 n=30
+
+
+
+
+
+
+
+[rank0]:[W813 07:37:04.646936615 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --paced --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2)]: 0
+W0813 07:37:07.237000 39260 site-packages/torch/distributed/run.py:874] 
+W0813 07:37:07.237000 39260 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:37:07.237000 39260 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:37:07.237000 39260 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=True experts=384 topk=6 h=7168 i=3072
+BENCH rank=0 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3694 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3627 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3675 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3648 n=30BENCH rank=5 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3650 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3648 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3648 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3675 n=30
+
+
+
+
+
+
+
+[rank0]:[W813 07:37:35.231144540 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --paced --ikr]: 0
+W0813 07:37:38.929000 39607 site-packages/torch/distributed/run.py:874] 
+W0813 07:37:38.929000 39607 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:37:38.929000 39607 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:37:38.929000 39607 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=True experts=384 topk=6 h=7168 i=3072
+BENCH rank=0 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3450 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3448 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3402 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3425 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3431 n=30
+BENCH rank=5 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3420 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3365 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3403 n=30
+
+
+
+
+
+
+[rank0]:[W813 07:38:06.500922578 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --paced --ikr --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2)]: 0
+W0813 07:38:09.212000 39946 site-packages/torch/distributed/run.py:874] 
+W0813 07:38:09.212000 39946 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:38:09.212000 39946 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:38:09.212000 39946 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=bench tokens=128 combine=mxfp8 ikr=False experts=384 topk=6 h=7168 i=3072
+BENCH rank=5 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=0.3610 n=30BENCH rank=4 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=0.3603 n=30BENCH rank=3 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=0.3628 n=30BENCH rank=0 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=0.3650 n=30BENCH rank=7 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=0.3586 n=30BENCH rank=1 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=0.3637 n=30BENCH rank=2 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=0.3635 n=30BENCH rank=6 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=0.3594 n=30
+
+
+
+
+
+
+
+[rank0]:[W813 07:38:36.337660933 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --paced --combine mxfp8]: 0
+W0813 07:38:40.190000 40292 site-packages/torch/distributed/run.py:874] 
+W0813 07:38:40.190000 40292 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:38:40.190000 40292 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:38:40.190000 40292 site-packages/torch/distributed/run.py:874] *****************************************
+BENCH-DG rank=0 tokens=128 paced=True median_ms=0.3281 n=30BENCH-DG rank=1 tokens=128 paced=True median_ms=0.3275 n=30BENCH-DG rank=5 tokens=128 paced=True median_ms=0.3238 n=30BENCH-DG rank=3 tokens=128 paced=True median_ms=0.3257 n=30BENCH-DG rank=7 tokens=128 paced=True median_ms=0.3211 n=30BENCH-DG rank=2 tokens=128 paced=True median_ms=0.3276 n=30BENCH-DG rank=4 tokens=128 paced=True median_ms=0.3234 n=30BENCH-DG rank=6 tokens=128 paced=True median_ms=0.3218 n=30
+
+
+
+
+
+
+
+RET[scripts/megamoe_deepgemm_driver.py --tokens 128 --paced]: 0
+W0813 07:38:53.948000 40507 site-packages/torch/distributed/run.py:874] 
+W0813 07:38:53.948000 40507 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:38:53.948000 40507 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:38:53.948000 40507 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=64 combine=bf16 ikr=True experts=384 topk=6 h=7168 i=3072
+BENCH rank=1 tokens=64 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3385 n=30BENCH rank=5 tokens=64 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3344 n=30BENCH rank=0 tokens=64 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3404 n=30BENCH rank=3 tokens=64 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3361 n=30BENCH rank=6 tokens=64 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3343 n=30BENCH rank=4 tokens=64 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3341 n=30BENCH rank=2 tokens=64 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3364 n=30BENCH rank=7 tokens=64 combine=bf16 ikr=True knobs=none closure=view median_ms=0.3318 n=30
+
+
+
+
+
+
+
+[rank0]:[W813 07:39:20.889528845 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 64 --closure view --paced --ikr --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2)]: 0
+W0813 07:39:23.330000 40853 site-packages/torch/distributed/run.py:874] 
+W0813 07:39:23.330000 40853 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:39:23.330000 40853 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:39:23.330000 40853 site-packages/torch/distributed/run.py:874] *****************************************
+BENCH-DG rank=0 tokens=64 paced=True median_ms=0.3237 n=30BENCH-DG rank=5 tokens=64 paced=True median_ms=0.3194 n=30BENCH-DG rank=1 tokens=64 paced=True median_ms=0.3236 n=30BENCH-DG rank=6 tokens=64 paced=True median_ms=0.3179 n=30BENCH-DG rank=4 tokens=64 paced=True median_ms=0.3192 n=30BENCH-DG rank=7 tokens=64 paced=True median_ms=0.3157 n=30BENCH-DG rank=3 tokens=64 paced=True median_ms=0.3214 n=30BENCH-DG rank=2 tokens=64 paced=True median_ms=0.3235 n=30
+
+
+
+
+
+
+
+RET[scripts/megamoe_deepgemm_driver.py --tokens 64 --paced]: 0

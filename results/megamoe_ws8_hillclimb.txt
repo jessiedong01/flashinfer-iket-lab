@@ -1,0 +1,467 @@
+MegaMoE @ DeepSeek-V4-Pro geometry (hidden 7168, inter 3072, 384 experts, top-k 6),
+world_size = 8 (EP8, 48 local experts/rank), 8x B300.
+Median kernel time via flashinfer.testing.bench_gpu_time (30 iters, 5 warmup; CUDA-event
+timing — cupti-python is absent in this container, see disclosure at the bottom),
+identical iteration counts on every rank (the kernel has cross-rank barriers).
+"bitexact" = torch.equal against the per-rank baseline output saved with --y-ref
+(same seeds, same inputs). Raw logs: logs/megamoe_ws8_bench.log,
+logs/megamoe_ws8_sweep2.log, logs/megamoe_bitexact_sweep.log, logs/megamoe_round3.log,
+logs/megamoe_deepgemm_bench.log.
+
+DECODE, 128 tokens/rank
+config                                             median_ms   vs base   bitexact
+----------------------------------------------------------------------------------
+cutedsl bf16-combine, heuristic knobs      BASE      0.3431       --       (ref)
+cutedsl combine=nvfp4                                0.3524     +2.7%      no (wire change)
+knob token_back=standalone_warps                     0.3596     +4.8%      not checked (round 1)
+knob token_back=reuse_dispatch_warps                 0.3585     +4.5%      not checked (round 1)
+knob flag_batch=16                                   0.3431      0.0%      not checked (round 1)
+knob group_hint=None                                 0.4065    +18.5%      not checked (round 1)
+knob load_balance_mode=static                        0.3533     +3.0%      YES (max|d|=0)
+knob mma_tiler=(256,64,256)                          0.3371     -1.7%      YES (max|d|=0)
+knob epi_flag_batch=(1,2)                            0.3430     -0.0%      YES (max|d|=0)
+knob epi_flag_batch=(4,4)                            0.3440     +0.3%      YES (max|d|=0)
+knob flag_batch=2                                    0.3431      0.0%      YES (max|d|=0)
+knob group_hint=256                                  0.3492     +1.8%      YES (max|d|=0)
+knob group_hint=128                                  0.3616     +5.4%      YES (max|d|=0)
+tiler(256,64,256)+epi_flag(1,2)          WINNER      0.3369     -1.8%      YES (max|d|=0)
+tiler(256,64,256)+flag_batch=2                       0.3370     -1.8%      YES (max|d|=0)
+tiler(256,64,256)+epi_flag(1,1)                      0.3370     -1.8%      YES (max|d|=0)
+tiler(128,64,256)                                    0.3420     -0.3%      YES (max|d|=0)
+knob cluster=(1,1,1)                                 FAILED (incompatible with 256-M tile)
+deepgemm fp8xfp4 megamoe                             0.3217     -6.2%      n/a (different kernel,
+                                                                           fp8-activation wire)
+
+PREFILL, 2048 tokens/rank
+config                                             median_ms   vs base   bitexact
+----------------------------------------------------------------------------------
+cutedsl bf16-combine                       BASE       0.5992       --       (ref)
+cutedsl combine=nvfp4                     WINNER      0.5295    -11.6%      no (combine wire
+                                                                            bf16 -> nvfp4)
+deepgemm fp8xfp4 megamoe                              0.7506    +25.3%      n/a
+
+PREFILL, 4096 tokens/rank
+config                                             median_ms   vs base   bitexact
+----------------------------------------------------------------------------------
+cutedsl bf16-combine                       BASE       0.9371       --       (ref; 0.9380 in round 1)
+cutedsl combine=nvfp4                     WINNER      0.8161    -12.9%      no (combine wire)
+cutedsl bf16 + token_back=standalone                  0.9298     -0.8%      YES (max|d|=0)
+cutedsl bf16 + flag_batch=16                          0.9605     +2.5%      YES (max|d|=0)
+cutedsl bf16 + epi_flag_batch=(4,4)                   0.9423     +0.6%      YES (max|d|=0)
+cutedsl bf16 + in_kernel_fc2_reduce                   0.9555     +2.0%      no (nondeterministic
+                                                                            REDG order)
+cutedsl nvfp4 + flag_batch=16                         0.8427     -10.1%     (worse than plain nvfp4)
+cutedsl nvfp4 + group_hint=None                       1.0824     +15.5%     worse
+cutedsl nvfp4 + token_back=standalone                 FAILED (quantized combine incompatible)
+deepgemm fp8xfp4 megamoe                              1.3620    +45.3%      n/a
+
+VERDICTS (world_size = 8)
+1. Numerics-preserving (bitwise-exact) hillclimb: decode -1.8% (tile N 128->64 +
+   epi_flag_batch (1,2)); prefill bf16 -0.8% (standalone token-back). Every accepted
+   row verified torch.equal max|d|=0 against the baseline outputs.
+2. Numerics-trading hillclimb (combine wire bf16 -> nvfp4, disclosed): -11.6% at 2048,
+   -12.9% at 4096 - this clears the >=10% target. The wire change quantizes the
+   per-topk fc2 terms to NVFP4 before cross-rank push-back (upstream's measured
+   quality cost on GB200: ~1.8pt extra rel-L2 vs the bf16 wire; GSM8K-neutral in
+   sglang PR #31470).
+3. vs DeepGEMM megamoe (DeepSeek's own kernel, fp8-activation wire - NOT bit-comparable,
+   both are real DSV4 serving configs): CuTeDSL wins prefill decisively on B300
+   (-29.5% at 2048, -40.1% at 4096, vs deepgemm's numbers), including the 2048 case
+   the sglang PR #31470 sweep had CuTeDSL losing before autotune. DeepGEMM keeps a
+   4.5% decode edge over our best bit-exact config (0.3217 vs 0.3369); IKET shows
+   decode is fc1 weight-TMA bound and the knob space is exhausted - closing the last
+   gap needs kernel work (e.g. DeepGEMM-style ring-coupled fc2->combine).
+Both kernels ran their GB200-derived heuristics on B300, plus the sweep shown here.
+
+FINAL SHOWDOWN (copy-free 'view' closure = nvfp4_mega_launch_thunk, PR#4341 semantics;
+deepgemm re-run same session; logs/megamoe_final_showdown.log):
+  128:  cutedsl view+winner-knobs 0.3340 (BITEXACT-VIEW max|d|=0)  vs deepgemm 0.3216  -> deepgemm +3.9%
+ 2048:  cutedsl view+nvfp4        0.5231                          vs deepgemm 0.7506  -> cutedsl -30.3%
+ 4096:  cutedsl view+nvfp4        0.7987                          vs deepgemm 1.3709  -> cutedsl -41.7%
+
+TIMING METHOD DISCLOSURE: cupti-python is not installed in this container; every
+bench_gpu_time call in this file fell back to CUDA-event timing (the warning is in the raw
+logs). All cells share the identical method (30 iters, median), so relative claims hold.
+
+DECODE SPAM CAMPAIGN (view closure throughout; baseline = 0.3340 view+winner-knobs;
+no-alpha rule: the copy-free closure itself is flashinfer PR#4341 semantics, not our win.
+Logs: logs/megamoe_decode_spam.log, logs/megamoe_decode_spam2.log):
+  m=128:
+    winner-knobs + load_balance=static      0.3430   worse
+    winner-knobs + flag_batch=8             0.3339   flat (tie)
+    winner-knobs + flag_batch=16            0.3340   flat
+    winner-knobs + non_ubulk_store=False    0.3339   flat (BITEXACT)
+    winner-knobs + cluster=(4,1,1)          HUNG (killed after 40 min; cluster>2 pathological)
+    in_kernel_fc2_reduce (bf16 wire)        8.9048   26x WORSE - REDG combine pathological at decode
+    combine=mxfp8                           8.9037   26x WORSE - quantized wire pathological at decode
+    combine=mxfp8 + winner-knobs            FAILED
+    winner-knobs + num_sched_stages=3       0.3359   worse
+    winner-knobs + num_sched_stages=4       8.9028   pathological (drain machinery)
+    winner-knobs + clc_bundle_size=2        0.3359   worse
+    winner-knobs + clc_bundle_size=4        0.3340   flat
+  m=64:
+    base (heuristic knobs)                  0.3339   (ref anchor; same floor as m=128 - pure weight-BW regime)
+    winner-knobs (tile N=64 + epi 1,2)      0.3300   -1.2% BITEXACT (max|d|=0)
+    deepgemm                                0.3195   deepgemm +3.3% ahead
+  Decode conclusion after ~25 configurations: every tuning and integration axis is
+  exhausted. CuTeDSL floor 0.330-0.334 vs DeepGEMM 0.320-0.322 at m=64/128; the
+  constant ~3.3-3.9% gap is kernel scheduling (weight-load pipelining / fc2 coupling),
+  independent of token count. Kernel-source work is the only remaining lever.
+
+CORRECTION - THE 8.9ms MODE (paced re-bench, logs/megamoe_paced_bench.log +
+IKET trace results/megamoe_m128_ikr_summary.txt):
+The ~8.9-9.1 ms/launch readings are NOT steady kernel costs of ikr/mxfp8/sched4.
+An IKET trace of the ikr config shows a clean 361 us instrumented launch with the
+REDG combine costing only ~+2 us/task inside fc2_epi. With per-iteration
+dist.barrier pacing (serving-like), all configs re-bench normally - and the 9 ms
+mode instead captured the BASE config on that occasion. Verdict: the megamoe
+kernel has a bistable degraded mode (~9 ms/launch, Dispatch_Barrier absorbing
+~4.7 ms/launch in traces) triggered by launch pacing vs its cross-rank
+stage/generation flow control, independent of config. Upstream-reportable, with
+IKET trace evidence.
+
+PACED DECODE TABLE (median of per-rank medians, 30 paced iterations):
+  m=128: cutedsl winner-knobs      ~0.340   (bitexact)
+         cutedsl ikr+winner-knobs  ~0.342   (numerics-trading; REDG ~ flat on B300)
+         cutedsl mxfp8 combine     ~0.363   (slower at decode)
+         deepgemm                  ~0.324
+  m=64:  cutedsl ikr+winner-knobs  ~0.335   vs deepgemm ~0.321
+FINAL DECODE VERDICT: cutedsl best (bitexact) trails deepgemm by ~4+-1% at decode
+under both harness styles. Every tuning, integration, and config axis is exhausted;
+the residual is combine/dispatch architecture. The two kernel-work items that
+remain are (1) a ring-coupled combine that avoids sys-scope NVLink atomics and
+per-launch staging, and (2) fixing the bistable degraded mode above.
+
+=== 2026-08-13 KERNEL-INNOVATIONS CAMPAIGN (branch kernel-innovations) ===
+
+Fresh baselines (same session, view closure, unpaced CUDA-event, 30 iters):
+  m=128 EP8: cutedsl winner-knobs 0.3321 / deepgemm 0.3217  (gap 10.4us = 3.1%)
+
+NVLS SWITCH-REDUCED COMBINE PROTO (scripts/nvls_combine_proto.py; isolated
+combine A/B at DSV4-Pro decode geometry, m=128/rank, bf16 wire, topk weights
+pre-applied; torch symm-mem MC via SymmetricBuffer; multimem.ld_reduce
+add.acc::f32.v4.bf16x2; local writer red.relaxed.gpu.add.noftz.v4.bf16x2):
+  Correctness: PASS all ranks, EP4 and EP8 (rel_l2 ~0.0027-0.0030 vs fp32 ref;
+  baseline push+reduce ~0.0017; same bf16-wire numerics class).
+  EP8 paced medians (30 iters; phases include ~5us launch/event overhead):
+    baseline  push=29-31us  reduce=11.2-11.8us   total 39-45us
+    nvls      write=12.5-13.9us  read=30-33us  zero=9us  barrier=14-20us
+              total hot (no zero) 46-52us  -> LOSES by ~7us
+  EP4 read was 20.5us (after ldmc batching; interleaved ld/st was 26us:
+  ldmc asm is side-effecting, compiler cannot hoist -- batch loads manually).
+  Root cause of the loss: multimem.ld_reduce reads all W copies regardless of
+  sparsity. Top-6 of 384 puts data on only ~4.4 of 8 ranks per token -> 1.8x
+  fabric waste (14.7 MB physical per 1.8 MB result per rank, ~470 GB/s/rank
+  effective), and the switch-reduce forces the read into a non-overlappable
+  post-barrier tail, where the baseline push overlaps with fc2 compute.
+  POSITIVE facts worth keeping:
+    - local red.gpu v4.bf16x2 writer = 13.4us for ~11 MB vs 29-31us for the
+      same bytes as NVLink unicast push (2.2x): the PUSH is the expensive,
+      writer-visible half of the current combine.
+    - red.relaxed.gpu.global.add.noftz.v4.bf16x2 compiles+works on B300 (16B
+      local vector bf16 reduction; the sys-scope version is the known-slow one).
+    - multimem barrier arrive+spin (1 CTA) ~5-10us incl. skew at 8 ranks.
+  VERDICT: switch-reduced combine is the wrong shape for sparse MoE combine at
+  EP8 (dense AR is where NVLS pays off). Pivot: fuse the topk reduce into the
+  mega kernel tail (bitexact-eligible), kill the second launch + its overhead.
+
+TAIL-FUSED TOPK REDUCE (flashinfer branch kernel-innovations, knob
+tail_fused_reduce=True; megamoe_kernel.py + token_comm.py):
+  Mechanism: the separate TopkReduce launch is deleted; the same per-element
+  fp32 K-ascending reduce runs on the idle epilogue warps inside the kernel
+  tail, released by a new drain-done NamedBarrier (id 11) that the dispatch
+  warps arrive after the FIRST (drain) nvlink barrier -- the exact point the
+  external TopkReduce's correctness already relied on. Reduce overlaps the
+  shared-counter reset + publish barrier. One kernel launch per step, like
+  DeepGEMM.
+  Numerics: BITEXACT vs the saved winner anchors (out/yref/m128) on all 8
+  ranks, max|d|=0, both warmup-copy and view paths. (fma(v,1.0,acc) == add
+  rounding; load batching/unroll only reorders loads, not accumulation.)
+  Perf (m=128 EP8, view closure, unpaced 30-iter medians, all ranks agree):
+    default (mega + TopkReduce launches)   0.3321 ms
+    tail_fused_reduce                      0.3318 ms   (-0.3us; new best bitexact)
+    deepgemm same session                  0.3217 ms
+  Paced A/B is inconclusive: run-to-run drift +-15-25us swamps the delta
+  (fused 0.376 then 0.350; default 0.348 then 0.356-0.361 across two rounds).
+  DSL gotchas hit: cute.copy into a 2D-rmem row slice kills the process
+  SILENTLY (exit 1, no traceback) -- use a constexpr Python list of 1D rmem
+  tensors; ldmc/LDG batching before the accumulate chain cut the in-kernel
+  reduce 4.6 -> 3.8us (2-unit ILP unroll included; epi warps have the 256-reg
+  budget, do NOT recruit the 72-reg-capped warps 4-7).
+  IKET tail decomposition (new spans Tail_Drain_Barrier / Tail_Publish_Barrier
+  + Tail_Fused_Reduce; traces out/tailbar13):
+    Tail_Drain_Barrier   mean 8-11us, p99 to 37us  -- SKEW ABSORBER (expert
+                         imbalance 718-806 pairs/rank), not machinery
+    Tail_Fused_Reduce    3.7-3.9us
+    Tail_Publish_Barrier ~3us  -- true per-barrier machinery cost
+    Dispatch_Barrier     9-38us head skew absorber (IKET-inflated)
+  VERDICT: the "combine architecture" half of the gap attribution is now
+  measured and closed: deleting the whole separate combine launch moves only
+  -0.3us. The residual ~10us vs deepgemm lives in the pipeline body
+  (fc1/fc2 scheduling tightness), and a multimem barrier swap would save only
+  ~2us/barrier (publish barrier shows machinery is already ~3us). Remaining
+  levers: body scheduling (weight-TMA pacing/ring), not combine.
+  FINAL INTERLEAVED A/B/A/B (same session, back-to-back, rank0 medians, n=30):
+    default 0.3349 / fused 0.3299 / default 0.3340 / fused 0.3317
+    -> tail_fused_reduce wins every pairing by 2.3-5.0us; session spread of
+    both configs ~ +-1.5us.  NEW BEST BITEXACT: 0.3299-0.3318 (vs prior 0.3321;
+    deepgemm 0.3217 same session -> remaining gap ~9-10us, now attributed to
+    pipeline-body scheduling, not combine).
+  Stability: 100 unpaced profile launches + 4x30 unpaced bench + 2x30 paced
+  bench with the fused tail, zero hangs, zero 9ms-mode trips, bitexact
+  maintained on every checked run.
+  m=64 A/B (same session, view closure, unpaced, rank0 medians):
+    default 0.3267 / tail_fused_reduce 0.3238 / deepgemm 0.3196
+    -> fused cuts the m=64 gap from 10.5us (3.3%, prior 0.3300 vs 0.3195) to
+    4.2us (1.3%). Effect is larger at m=64 because the deleted TopkReduce
+    launch is a fixed cost while the in-kernel reduce shrinks with m.
+    (m=64 numerics: EP2/EP4 oracle PASS with fused; no m=64 EP8 bitexact
+    anchors exist -- m=128 anchors are the bitexact evidence.)
+
+================================================================================
+2026-08-13 Campaign 3: IKET head-window kernel work
+================================================================================
+Directives in force: EP8-only decisions; A/B only on a fully idle box, both
+arms back-to-back in one idle window.
+
+IKET baseline trace, m=128 EP8, tail_fused_reduce=True, atomic_counter,
+tiler (256,64,256) cluster (2,1,1) (head-baseline trace, 3 profile iters,
+--max-ts-cnt-per-warp 8192 needed -- sizing pass segfaults without it):
+  wall (IKET-inflated) 359-373 us; grid (2,1,74) = 148 CTAs x 384 thr.
+  HEAD FINDING (new): first fc1 weight-TMA span starts p50 54.5 us (rank
+  0x5885) / 68.7 us (rank 0x5887) after the launch's first range, tight
+  across all 148 CTAs (min-max spread < 1.5 us). Head = prologue +
+  Dispatch_Prep (2.9 us) + Dispatch_Barrier (48.4 us single span, incl.
+  software grid sync + NVLink barrier + cross-rank skew) + first produce.
+  DRAM is weight-silent for that entire window while the launch is
+  weight-bandwidth-bound (1.585 GB @ ~60% of the 203 us floor).
+  produce_tile_id (sched warp): 5140 spans, mean 3.6 us, p50 2.0, p99 54 us
+  (span includes cluster-broadcast waits in atomic mode -- wait-inflated,
+  not pure work; consumer-side mailbox starvation NOT directly observable,
+  waits hide inside tma_* spans -- zero >=1us gaps between consecutive
+  weight-TMA spans on warp 5).
+  Tail (already lean): Tail_Drain 4.0 / Tail_Fused_Reduce 4.1 /
+  Tail_Publish 3.4 us means.
+  Dispatch warps at m=128: Pull.* totals < 20 us across ALL warps; parked on
+  NamedBarrier 8 for ~the whole GEMM body (confirms map).
+
+NEW KNOB (implemented, kernel-innovations): head_weight_prefetch_kb
+  Mechanism: during the dispatch-barrier head, each CTA's epilogue thread 0
+  issues ONE cp.async.bulk.prefetch.L2.global for a disjoint CTA-linear slice
+  of the fc1 weight pool (expert-major order = consumption order). 512 KB x
+  148 CTAs = 74 MB of the pool front handed to the async proxy while DRAM is
+  otherwise idle. Pure L2 hint: no completion tracking, bitexact by
+  construction, robust to expert skipping. Files: ptx_helpers.py
+  (bulk_prefetch_l2_raw), kernel_fc12.py (ctor+name+epilogue branch),
+  megamoe_kernel.py (forward+name), shim/nvfp4.py (config+fingerprint),
+  shim/tuner.py (PERF_KNOBS 0/256/512/1024).
+  Gates: EP8 oracle PASS (rel_l2 0.0026 all ranks, knob echoed).
+  Bitexact m=128 EP8 vs out/yref/m128 anchors: [pending]
+  A/B bench (idle-window, interleaved, + paced, + m=64, + same-window
+  deepgemm anchors): [pending]
+
+head_weight_prefetch A/B VERDICT (batch completed 21:04 pre-reboot in a clean
+gated idle window; log survived container restart; post-reboot bitexact
+re-verified 8/8 exact=True max|d|=0 before reading results as valid):
+  m=128 EP8 unpaced (view closure, n=30, interleaved A/B/A/B, all ranks agree):
+    base_1 0.3299 | hwp512_1 0.3318 | base_2 0.3299 | hwp512_2 0.3319
+    hwp1024 0.3298 (neutral) | hwp256 0.3318
+    same-window deepgemm anchor 0.3226
+  m=64 EP8 unpaced: base 0.3238 | hwp512 0.3257 ; deepgemm anchor 0.3195
+  m=128 EP8 PACED: base 0.372-0.387 (rank medians) | hwp512 0.341-0.348
+    -> -35 to -40 us (-9%)
+  m=64 EP8 PACED: base 0.346-0.352 | hwp512 0.335-0.342 -> ~ -10 us
+READ (regime-dependent, both directions recorded):
+  - Unpaced back-to-back: launches pipeline; iteration k+1's weight-silent
+    head hides under iteration k's tail, so there is no head to reclaim AND
+    the prefetch's 74 MB L2 stream contends with the previous launch's tail
+    -> +1.9-2.0 us regression at 256/512 KB. 1024 KB is neutral: 148 MB
+    exceeds L2, the async proxy drops/evicts most of it -> no-op. Base
+    reproduces the sweep agent's post-reboot A/A bar (0.3300) exactly.
+  - Paced single-launch (the serving-decode-step-shaped regime: one MoE
+    launch per layer per step, head NOT hidden by a previous MoE launch):
+    prefetch wins big, -9% m=128. The IKET head diagnosis (54-69 us
+    weight-silent) was correct -- it is just already amortized away by
+    launch pipelining in the unpaced harness.
+DECISION: knob default stays 0 (off) -- the unpaced crown metric must not
+regress. Documented as a paced/serving-regime win. Follow-up candidates for
+the UNPACED gap (7.3 us vs same-window DG): body pacing only -- head fixes
+(incl. the early_internal_init overlap idea) target time that unpaced
+pipelining already hides.
+PENDING (optional): deepgemm --paced anchors for a paced-regime crown claim.
+
+deepgemm PACED anchors (gated idle window, n=30, completes the paced-regime
+comparison; flashinfer branch tip now efe96103 = code-identical rewrite of
+b0e67b5c, one comment line changed):
+  m=128 paced: rank medians 0.3184-0.3256   m=64 paced: 0.3138-0.3214
+READ: deepgemm barely degrades under pacing (paced ~= unpaced 0.3226/0.3195),
+while our base pays 0.3299 -> 0.372-0.387 paced. So our launch carries
+~45-55 us of exposed single-launch head that back-to-back pipelining hides;
+head_weight_prefetch_kb=512 recovers ~70% of it (paced 0.341-0.348) but does
+NOT take the paced crown: deepgemm paced ~0.322 still leads by ~20 us.
+Structural conclusion from the IKET head-baseline trace + this table:
+  (a) unpaced gap (7.3 us same-window) = pipeline-body pacing only;
+  (b) paced gap = the un-prefetchable head remainder (dispatch grid sync +
+      NVLink barrier + skew ~10-20 us) on top of (a);
+  (c) deepgemm's launch structure exposes almost no single-launch head --
+      closing our head machinery cost (not just its DRAM idleness) is the
+      lever for the paced regime; body pacing remains the lever for the
+      unpaced crown.
+
+================================================================================
+CAMPAIGN 3 / T1: WEIGHT-EAGER PIPELINE SPLIT (knob weight_eager_stages) -- WIP
+================================================================================
+MECHANISM (from the IKET head-baseline finding): weights are dispatch-
+independent, but the whole AB pipeline sits behind the sched publish, which
+waits on the dispatch barrier -- so the launch is weight-silent for the whole
+~50-70us head.  Change set:
+  (a) deterministic first scheduler ticket in atomic_counter mode
+      (params flag deterministic_first_tile, on iff weight_eager_stages>0):
+      first ticket := cluster linear id (bidz), NO atomic round trip;
+      later tickets := atom.add + num_persistent_clusters.  Coverage /
+      uniqueness / per-cluster monotonicity preserved (bidz < num_clusters
+      <= any offset ticket).  Static mode already walks from bidz.
+  (b) TMA-A warp pre-fills min(weight_eager_stages, num_ab_stage) AB stages
+      with the PREDICTED first task's fc1 weight k-tiles at kernel start
+      (before its first sched consume).  Prediction = nb=1-per-expert
+      decode: expert = bidz // I1, m-block = bidz % I1 (I1 = 24 at DSV4-Pro
+      geometry), valid for tickets < E_g0*I1 = 528.  Pure A-side identity
+      (phase, expert, m-tile); token-block multiplicity does not matter.
+  (c) reconcile protocol at first consume: TMA-A compares actual vs
+      predicted, publishes a discard count via SMEM flag + NamedBarrier 12
+      (warps 4/5/6).  Match -> TMA-A starts its first fc1 k-loop at
+      k=eager_cnt (gmem indexed by loop var); TMA-B/MMA unchanged (TMA-B's
+      k 0..e-1 B-halves pair with the pre-filled A-halves).  Mismatch ->
+      TMA-B completes the stages with in-bounds dummy B/SFB loads (pool row
+      0, k-tile 0), MMA consume-discards them; discarded stages never feed
+      an accumulating MMA => bitexact by construction on both paths.
+FILES: kernel_fc12.py (ctor+name+storage+warp5/6/mma), fc1_fc2_fuse_sched.py
+  (params flag + internal_init + dynamic-advance offset), megamoe_kernel.py,
+  shim/nvfp4.py (config+fingerprint+ctor), shim/tuner.py (PERF_KNOBS 0/4/8).
+  Default OFF.
+
+DEBUG DETOUR (2h, ledgered per campaign rules): with the knob OFF every
+8-rank run died silently ~25s in (exit 1, zero traceback; NVSHMEM "symmetric
+memory not freed" teardown spam).  we=8 passed everything (oracle rel_l2
+0.0026; m128+m64 y-ref torch.equal max|d|=0 all 8 ranks) -- so knob-off
+looked cursed.  Silent because the CuTeDSL excepthook prints the formatted
+DSL error and sys.exit(1)s, and torchrun swallows the print.  Repro that
+cracked it: SINGLE-PROCESS kernel.aot_compile(max_active_clusters=74) with
+fake tensors (no dist/NVSHMEM/torchrun) surfaces the real error in ~60s:
+  error[TYPE_UNSTABLE_JOIN]: `handle` has type None on one path and
+  ImmutableResourceHandle on another (kernel_fc12 warp5 fc1 k-loop).
+ROOT CAUSE: the eager/prefill/discard blocks assigned `handle` at OUTER warp
+scope; with the knob off those const_expr blocks do not trace, so the AST
+preprocessor threads `handle`=None into the (pristine) k-loops' region join.
+FIX: loop-local names (_we_handle) in all inserted blocks; k_start_first
+loop-tail reset made unconditional (typed on every path; dead constant when
+off).  LESSON for every future const_expr-gated insertion: never introduce
+an outer-scope assignment to a name that pristine loops assign; verify BOTH
+knob states compile via the single-process aot_compile repro
+(scripts-local /tmp/we_repro.py pattern) BEFORE burning 8-rank windows.
+GATES (post-fix): [pending]
+
+================================================================================
+BRUTE FORCE COMBINATORIAL SWEEP (staged factorial; scripts/megamoe_bf_*.py +
+megamoe_sweep.py; ledger repo/results/brute_force_sweep.csv) -- 2026-08-13
+================================================================================
+Design: stage 1 = 120-cell correctness factorial at m=128 EP8 unpaced view
+(5 tiles x 3 token_back x 2 load_balance x 2 non_ubulk x 2 tail_fused; fixed
+cluster (2,1,1), bf16 combine, ikr=False, heuristic perf knobs gh512/fb4/
+efb(1,2)); stage 2 = 324-cell perf grid on the top-5 (full 260 on #1:
+group_hint x flag_batch x all 13 epi_flag_batch; 16-cell screening on #2-#5);
+stage 2b = 13-cell extension on the new perf axis head_weight_prefetch_kb
+(landed mid-sweep by the kernel agent) + one screening-gap cell; stage 3 =
+top-8 x {m64,m128} x {unpaced,paced} x 3 reps + paced pf=512 twins.
+Timing: flashinfer bench_gpu_time(enable_cupti=True) falls back to CUDA
+events in this container (cupti-python absent) -- IDENTICAL method to the
+prior hillclimb baselines, so all deltas are same-method. All configs
+bitexact-gated vs out/yref/m128 + m64 anchors (copy AND view paths).
+
+TOTALS: 595 OK measurement rows, 472 unique configs measured, 60 INVALID
+cells ledgered (validity mirror of tuner.is_valid), 30 FAIL (all = the one
+m=128 paced session that compiled the kernel agent's mid-edit broken tree,
+rerun below), 0 HANG, 0 bitexact violations anywhere.
+
+STAGE 1 (correctness factorial, m=128): winner family = tail_fused_reduce
+x epi_warps x atomic_counter. Main effects (mean over 60 valid cells):
+  tail_fused True -12us; epi_warps -18us vs both dispatch-warp modes;
+  atomic_counter -7us vs static; tile (256,64,256) best (mean 0.3440),
+  (128,64,256) -- NOT in the tuner value set, mission-added -- ties
+  (256,128,256) for 2nd (0.3339 min) and COMPILES+RUNS bitexact.
+  non_ubulk_fc2_store: no effect on the winner corner (ties at 0.3308).
+  tail_fused generalizes: wins its pairing in every tile x balancer combo,
+  not just the hillclimb's single winner cell.
+
+STAGE 2 (perf grid): THE INTERACTION FIND = flag_batch=1.
+  gh=512 w0 grid: fb=1 min 0.3258 / mean 0.3291 vs fb in {2,4,8,16} min
+  0.3296-0.3299 -- fb=1 is -4us min-to-min, and was NEVER tested by the
+  greedy hillclimb or the autotune candidate set (both only fb in {4,8}).
+  group_hint monotonic: 512 (0.3258) > 256 (0.3277) > 128 (0.3359) >> 64
+  (0.3852; and gh=64 flips the fb preference -- fb=1 also wins there).
+  epi_flag_batch nearly flat among small values at fb=1 ((1,1)/(1,2)/(1,4)
+  tie 0.3258). Screening sets #2-#5 (fb in {2,8} by design): none beat #1;
+  gap closed by s2b-x00 (nub=False twin at fb=1) which ties 0.3258.
+  Cross-reboot replication (120 duplicated cells): p50 |d| 0.9us, p90
+  2.3us -> noise band ~2.5us for single medians.
+
+STAGE 2b (head_weight_prefetch_kb 256/512/1024 on the champion): NULL in
+unpaced decode (pf=256/1024 tie 0.3258 exactly, pf=512 0.3268 ~ noise) --
+matches the kernel agent's own A/B (launch pipelining hides the head
+window unpaced). Paced twins in stage 3: inconclusive (inside paced drift; see below).
+
+STAGE 3 (finals, 3 reps, mean [min]):
+  m=128 unpaced: 0.3258 [0.3258], spread 0.1us -- CHAMPION
+    knobs: mma (256,64,256), cluster (2,1,1), epi_warps, atomic_counter,
+    non_ubulk True, tail_fused True, ikr False, gh 512, fb 1, efb (1,4)
+    [(1,1)/(1,2) statistically identical]
+  m=64 unpaced: 0.3236 [0.3236], spread 0.0us -- same knob family (efb
+    (1,1)); the m=64 and m=128 winners are the SAME config family, unlike
+    the token-count-keyed heuristic profiles.
+  m=64 paced: 0.3349-0.3358; pf=512 twin inconclusive at m=64 (0.3360 vs
+    0.3358 base, inside paced run-to-run drift).
+  m=128 paced: 0.3398 [0.3385] position-controlled (champion x3 in one
+    session; nub=False twin 0.3409 -- identical within noise). PACED
+    SESSION-POSITION ARTIFACT found and documented: the first ~3 configs of
+    a multi-config paced session read ~+30us (0.370 vs 0.340 for the SAME
+    champion config; 30/30 rows bitexact regardless) -- clocks/warmup ramp.
+    Cross-position paced rankings are confounded; unpaced (5 dry + 30
+    CUPTI-fallback iters) is the decision metric, matching the hillclimb's
+    'paced A/B inconclusive' verdict. pf=512 paced twins land inside the
+    drift band -- the kernel agent's paced -35us prefetch claim is neither
+    confirmed nor refuted by this design (their interleaved A/B is the
+    right instrument for it). Same-day deepgemm paced anchors (their
+    8ec0925): 0.318-0.326 m=128 -- deepgemm also holds the paced crown
+    (our position-controlled 0.3398).
+  Oracle on champion (m=64, EP8): PASS rel_l2=0.0026 all 8 ranks (gate
+    0.03; equals the kernel agent's reference value for this tree).
+  Note: the m=128 paced rerun, paced control, and oracle ran on a PRISTINE
+    read-only git-archive copy of committed efe96103 (PYTHONPATH override;
+    rows stamped efe96103-pristine) because the live worktree was mid-edit
+    and non-compilable at the time -- zero mutation of the shared tree.
+
+VERDICT vs baselines (m=128 / m=64 unpaced, view closure, rank0 medians):
+  prior best bitexact (hillclimb):    0.3299-0.3318 / 0.3238
+  BRUTE FORCE champion:               0.3258         / 0.3236
+    = -4.1 to -6.0us vs prior best at m=128; -0.2us at m=64 (m=64 was
+    already near-saturated; the win is fb=1+efb, concentrated at m=128)
+  deepgemm rival (same-window):       0.3226         / 0.3195
+    -> gap cut from ~8-10us to 3.2us (1.0%) at m=128; 4.1us (1.3%) at m=64.
+    DeepGEMM is NOT beaten; the remaining gap sits in the pipeline body
+    (fc1/fc2 scheduling), consistent with the hillclimb's IKET attribution.
+
+MECHANISM READ (why fb=1 wins at decode): flag_batch batches the token-back
+readiness flags; at m=128/rank the per-expert token counts are tiny (~2
+tokens/expert avg), so batching flags delays the first combine-eligible
+tokens with no amortization payback -- finer-grained (fb=1) flag publishing
+lets the epi-warp token-back start earlier. Consistent with fb=1 also
+winning at gh=64 and with epi_flag_batch being flat (epi flags are already
+per-tile-fine at this size).
+
+Campaign attribution: kernel tree moved under the sweep (665c5976 ->
+b0e67b5c -> efe96103 (+3 uncommitted dirty states during stage 3)); every
+CSV row carries commit+dirty-sha; A/A checks at each boundary showed the
+champion invariant (0.3300-0.3309 across 665c5976/b0e67b5c; 0.3258 across
+efe96103 dirty states 862174b7/6b52d3ad). head_weight_prefetch_kb=0 in all
+stage-1/2 rows (knob landed defaulted-off).
+================================================================================

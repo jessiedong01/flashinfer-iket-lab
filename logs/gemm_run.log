@@ -1,0 +1,14 @@
+[run-iket] Removing existing output directory: /home/jessie/iket-lab/out/gemm
+[run-iket] ============= Dry run application first to collect some info... =============
+ran mnk=(4096,4096,7168) iters=2 cos_sim=0.99097
+[run-iket] Auto-computed context buffer size: 0.01 GB (6,911,481 bytes)
+[run-iket] ============= Run application for real profiling... =============
+ran mnk=(4096,4096,7168) iters=2 cos_sim=0.99097
+[run-iket] Dumped perfetto trace to /home/jessie/iket-lab/out/gemm/iket_pid_0xc73.pftrace
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/gemm/iket_pid_0xc73.trace.json
+[run-iket] Dumped compressed trace to /home/jessie/iket-lab/out/gemm/iket_pid_0xc73.pftrace.gz
+[run-iket] Dumped perfetto HTML viewer to /home/jessie/iket-lab/out/gemm/iket_pid_0xc73.html
+[run-iket] To view: cd /home/jessie/iket-lab/out/gemm && python3 -m http.server 8080 , then open http://localhost:8080/iket_pid_0xc73.html
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/gemm/tracker
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/gemm/gen-config
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/gemm/iket

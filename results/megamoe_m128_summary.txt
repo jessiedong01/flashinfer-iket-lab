@@ -1,0 +1,106 @@
+
+=== out/megamoe_m128_bf16/iket_pid_0x1669.trace.json (0 instrumented launches) ===
+
+=== out/megamoe_m128_bf16/iket_pid_0x16af.trace.json (3 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_fc1fc2_kernel_impl_moe_nvfp4_swapabmegamoe_kernelSm100M
+  grid=(2,1,74) block=(384,1,1) warps=1776 markers=0 wall(first-warp-start -> last-warp-end)=589.0 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  tma_token_fc1        4608    54728.9    11876.9      11456      24832      25728
+  tma_weight_fc1       4608    54711.4    11873.1      11424      24672      25568
+  mma_fc1              4608    27641.3     5998.5       7488      26848      29344
+  tma_token_fc2        5376    25328.5     4711.4       4672       7552      15872
+  tma_weight_fc2       5376    25289.5     4704.2       4672       7488      15840
+  fc1_epi             18432    22183.7     1203.5       1120       2528       3488
+  produce_tile_id     10132    21821.8     2153.7       1728      14368      14784
+  mma_fc2              5376    12740.1     2369.8       1984       6688      14880
+  fc2_epi             21504     9533.7      443.3        384       1408       3456
+  tma_token_fc1_wait      592     2471.8     4175.3        672      15520      15648
+  tma_token_fc2_wait      448      772.8     1725.0        736       9024      13792
+  mma_acquire          4992      202.4       40.5         32         64        160
+  Pull.ChooseToken        3        9.6     3189.3       2144       5472       5472
+  Dispatch_Barrier        1        8.8     8832.0       8832       8832       8832
+  Dispatch_Prep           1        3.0     3040.0       3040       3040       3040
+  Pull.TMA_NVLink_Roundtrip        2        2.9     1472.0        832       2112       2112
+  Pull.Weight_LDG         2        1.7      864.0        320       1408       1408
+  Pull.TMA_Store          2        1.7      864.0        160       1568       1568
+  Pull.Arrival_Atomic        2        0.6      304.0         96        512        512
+  Pull.SF_LDG_STG         2        0.1       48.0         32         64         64
+
+=== out/megamoe_m128_bf16/iket_pid_0x16b0.trace.json (3 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_fc1fc2_kernel_impl_moe_nvfp4_swapabmegamoe_kernelSm100M
+  grid=(2,1,74) block=(384,1,1) warps=1776 markers=0 wall(first-warp-start -> last-warp-end)=621.5 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  tma_token_fc1        4608    54546.0    11837.2      11392      24608      26048
+  tma_weight_fc1       4608    54526.7    11833.0      11392      24544      26016
+  produce_tile_id     10132    28037.9     2767.3       1824      47488      48000
+  mma_fc1              4608    27512.9     5970.7       5888      26848      29504
+  tma_token_fc2        5376    25701.8     4780.8       4672       8672      14976
+  tma_weight_fc2       5376    25664.4     4773.9       4672       8640      14944
+  fc1_epi             18432    22874.7     1241.0       1120       3008       3968
+  mma_fc2              5376    12952.3     2409.3       1792       7232      15744
+  fc2_epi             21504     9567.4      444.9        384       1440       3296
+  tma_token_fc1_wait      592     2473.4     4178.0        576      15520      15584
+  tma_token_fc2_wait      448     1108.3     2473.8       1056      13024      13568
+  mma_acquire          4992      203.1       40.7         32         64        416
+  Dispatch_Barrier        1       42.4    42400.0      42400      42400      42400
+  Pull.ChooseToken        3        9.1     3029.3       1920       5312       5312
+  Pull.TMA_NVLink_Roundtrip        2        6.2     3088.0       2240       3936       3936
+  Pull.Weight_LDG         2        5.0     2512.0       1952       3072       3072
+  Dispatch_Prep           1        2.9     2880.0       2880       2880       2880
+  Pull.TMA_Store          2        0.6      288.0        160        416        416
+  Pull.Arrival_Atomic        2        0.4      176.0         64        288        288
+  Pull.SF_LDG_STG         2        0.1       48.0         32         64         64
+
+=== out/megamoe_m128_bf16/iket_pid_0x16b1.trace.json (3 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_fc1fc2_kernel_impl_moe_nvfp4_swapabmegamoe_kernelSm100M
+  grid=(2,1,74) block=(384,1,1) warps=1776 markers=0 wall(first-warp-start -> last-warp-end)=622.1 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  tma_token_fc1        4608    54526.3    11833.0      11392      24192      25632
+  tma_weight_fc1       4608    54519.1    11831.4      11392      24032      25600
+  produce_tile_id     10132    27703.9     2734.3       1760      48032      48512
+  mma_fc1              4608    27517.1     5971.6       7744      26464      28672
+  tma_token_fc2        5376    25371.7     4719.4       4672       7296      10848
+  tma_weight_fc2       5376    25331.5     4712.0       4672       7328      10816
+  fc1_epi             18432    22883.9     1241.5       1152       3104       4448
+  mma_fc2              5376    12817.4     2384.2       1792       6880      12096
+  fc2_epi             21504     9657.1      449.1        384       1504       2880
+  tma_token_fc1_wait      592     2410.5     4071.8        736      15168      15360
+  tma_token_fc2_wait      448      908.3     2027.4        704       8640       9216
+  mma_acquire          4992      201.5       40.4         32         64        160
+  Dispatch_Barrier        1       43.1    43104.0      43104      43104      43104
+  Pull.ChooseToken        3        9.4     3146.7       2144       5344       5344
+  Pull.TMA_NVLink_Roundtrip        2        6.1     3040.0       2848       3232       3232
+  Pull.Weight_LDG         2        4.7     2336.0       2208       2464       2464
+  Dispatch_Prep           1        2.2     2240.0       2240       2240       2240
+  Pull.Arrival_Atomic        2        0.7      352.0         64        640        640
+  Pull.TMA_Store          2        0.4      176.0        160        192        192
+  Pull.SF_LDG_STG         2        0.1       48.0         32         64         64
+
+=== out/megamoe_m128_bf16/iket_pid_0x16b2.trace.json (3 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_fc1fc2_kernel_impl_moe_nvfp4_swapabmegamoe_kernelSm100M
+  grid=(2,1,74) block=(384,1,1) warps=1776 markers=0 wall(first-warp-start -> last-warp-end)=600.4 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  tma_token_fc1        4608    54275.8    11778.6      11328      24320      25568
+  tma_weight_fc1       4608    54262.4    11775.7      11328      24192      25376
+  mma_fc1              4608    27383.6     5942.6       5888      26528      28640
+  tma_token_fc2        5376    25987.1     4833.9       4704       7904      15808
+  tma_weight_fc2       5376    25950.3     4827.1       4704       7904      15776
+  produce_tile_id     10132    24140.3     2382.6       1696      26368      26944
+  fc1_epi             18432    21782.0     1181.8       1088       2432       3296
+  mma_fc2              5376    13115.5     2439.6       1824       7552      15328
+  fc2_epi             21504     9616.6      447.2        384       1472       4640
+  tma_token_fc1_wait      592     2390.3     4037.6        416      15552      15584
+  tma_token_fc2_wait      448     1142.9     2551.1        928      13312      14368
+  mma_acquire          4992      201.5       40.4         32         64        192
+  Dispatch_Barrier        1       21.8    21760.0      21760      21760      21760
+  Pull.ChooseToken        3        9.3     3114.7       2336       5184       5184
+  Pull.TMA_NVLink_Roundtrip        2        6.2     3104.0       2752       3456       3456
+  Pull.Weight_LDG         2        4.8     2384.0       2304       2464       2464
+  Dispatch_Prep           1        2.0     2016.0       2016       2016       2016
+  Pull.TMA_Store          2        0.6      320.0        224        416        416
+  Pull.Arrival_Atomic        2        0.6      288.0        256        320        320
+  Pull.SF_LDG_STG         2        0.1       48.0         32         64         64

@@ -1,0 +1,106 @@
+
+=== out/comm/iket_pid_0x829.trace.json (0 instrumented launches) ===
+
+=== out/comm/iket_pid_0x86f.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslgemm_allreduce_two_shotPersist
+  grid=(1,1,148) block=(320,1,1) warps=1480 markers=0 wall(first-warp-start -> last-warp-end)=275.7 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  ar_main               592   153850.5   259882.6     265344     274720     274816
+  ar_tile              1024   150948.2   147410.3     225088     240896     244032
+  ar_ldst              1024    71331.6    69659.7     104544     128928     133536
+  ar_bar_sync          1280    19554.7    15277.1         32     120448     121312
+  ar_final_bar          592     2754.8     4653.4       1280      25344     116576
+  epi_ar_arrive         256     1368.7     5346.4       5120       7264       7712
+  ar_flag_wait          256      287.2     1121.8       1216       1792       1824
+
+=== out/comm/iket_pid_0x870.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslgemm_allreduce_two_shotPersist
+  grid=(1,1,148) block=(320,1,1) warps=1480 markers=0 wall(first-warp-start -> last-warp-end)=583.1 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  ar_main               592   335544.2   566797.6     572576     581344     581632
+  ar_tile              1024   332623.4   324827.5     530048     548160     550304
+  ar_ldst              1024    70415.9    68765.6     102176     127840     133088
+  ar_bar_sync          1280    65210.4    50945.6         32     427648     428544
+  epi_ar_arrive         256    29061.0   113519.5     189568     202336     202688
+  ar_final_bar          592     2808.7     4744.4       1248      28160     117248
+  ar_flag_wait          256      290.1     1133.2       1184       1824       1856
+
+=== out/comm/iket_pid_0x871.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslgemm_allreduce_two_shotPersist
+  grid=(1,1,148) block=(320,1,1) warps=1480 markers=0 wall(first-warp-start -> last-warp-end)=525.4 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  ar_main               592   301286.1   508929.2     514944     523872     524000
+  ar_tile              1024   298650.4   291650.8     473888     489728     491808
+  ar_ldst              1024    70964.7    69301.5     103872     126016     131776
+  ar_bar_sync          1280    56515.0    44152.4         32     370080     371232
+  epi_ar_arrive         256    20549.1    80270.0     131584     144736     145248
+  ar_final_bar          592     2525.6     4266.3       1088      27200      30880
+  ar_flag_wait          256      279.6     1092.1       1184       1728       1824
+
+=== out/comm/iket_pid_0x872.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslgemm_allreduce_two_shotPersist
+  grid=(1,1,148) block=(320,1,1) warps=1480 markers=0 wall(first-warp-start -> last-warp-end)=205.9 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  ar_main               592   112809.5   190556.6     195136     204864     204896
+  ar_tile              1024   109800.6   107227.2     153952     173888     177728
+  ar_ldst              1024    71633.0    69954.1     103232     131616     137952
+  epi_ar_arrive         256    20633.3    80598.9     130592     142304     142656
+  ar_bar_sync          1280     9233.9     7214.0         32      50784      51520
+  ar_final_bar          592     2900.6     4899.7       1088      33984      40032
+  ar_flag_wait          256      284.3     1110.6       1184       1760       1792
+
+=== out/comm/iket_pid_0x873.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslgemm_allreduce_two_shotPersist
+  grid=(1,1,148) block=(320,1,1) warps=1480 markers=0 wall(first-warp-start -> last-warp-end)=540.6 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  ar_main               592   311094.4   525497.4     530752     539200     539328
+  ar_tile              1024   308182.3   300959.3     487392     508768     513984
+  ar_ldst              1024    71447.3    69772.8     102080     131008     139488
+  ar_bar_sync          1280    58849.2    45975.9         32     385824     386752
+  epi_ar_arrive         256    25637.1   100145.0     166528     178528     178752
+  ar_final_bar          592     2799.0     4728.1       1344      29984      33216
+  ar_flag_wait          256      283.9     1108.9       1216       1696       1728
+
+=== out/comm/iket_pid_0x874.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslgemm_allreduce_two_shotPersist
+  grid=(1,1,148) block=(320,1,1) warps=1480 markers=0 wall(first-warp-start -> last-warp-end)=331.2 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  ar_main               592   186819.6   315573.6     321280     329792     329824
+  ar_tile              1024   184091.4   179776.8     279808     297472     300480
+  ar_ldst              1024    71079.0    69413.1     103616     127296     133408
+  ar_bar_sync          1280    27883.1    21783.7         32     176288     176992
+  ar_final_bar          592     2616.0     4419.0       1088      27584      34240
+  epi_ar_arrive         256     1479.0     5777.2       5632       8832       8896
+  ar_flag_wait          256      291.9     1140.1       1216       1856       1920
+
+=== out/comm/iket_pid_0x875.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslgemm_allreduce_two_shotPersist
+  grid=(1,1,148) block=(320,1,1) warps=1480 markers=0 wall(first-warp-start -> last-warp-end)=207.0 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  ar_main               592   113023.5   190918.1     196704     206016     206048
+  ar_tile              1024   110024.7   107446.0     155136     171872     174400
+  ar_ldst              1024    70841.4    69181.1     103456     128448     134656
+  epi_ar_arrive         256    19832.3    77470.0     124768     134272     134720
+  ar_bar_sync          1280     9443.0     7377.3         32      51552      52480
+  ar_final_bar          592     2886.1     4875.2       1248      29152     117056
+  ar_flag_wait          256      289.2     1129.5       1216       1792       1792
+
+=== out/comm/iket_pid_0x876.trace.json (2 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslgemm_allreduce_two_shotPersist
+  grid=(1,1,148) block=(320,1,1) warps=1480 markers=0 wall(first-warp-start -> last-warp-end)=214.5 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  ar_main               592   117568.9   198596.1     204352     213056     213088
+  ar_tile              1024   114630.5   111943.8     161536     180000     185312
+  ar_ldst              1024    70077.2    68434.7     100736     128512     132224
+  epi_ar_arrive         256    15767.0    61589.8       7552     141184     141344
+  ar_bar_sync          1280    10752.3     8400.2         32      60000      60800
+  ar_final_bar          592     2829.7     4779.9       1120      29664     132384
+  ar_flag_wait          256      286.7     1120.0       1216       1824       1856

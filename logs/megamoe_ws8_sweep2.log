@@ -1,0 +1,1605 @@
+W0813 03:48:32.556000 11767 site-packages/torch/distributed/run.py:874] 
+W0813 03:48:32.556000 11767 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:48:32.556000 11767 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:48:32.556000 11767 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 128, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (2, 4), 'token_back_mode': 'standalone_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3596 n=30
+BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3596 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3596 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3596 n=30
+
+BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3596 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3596 n=30
+
+
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3596 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3596 n=30
+
+[rank0]:[W813 03:48:58.841805708 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+sweep128 [token_back_mode=standalone_warps]: 0
+W0813 03:49:01.769000 12123 site-packages/torch/distributed/run.py:874] 
+W0813 03:49:01.769000 12123 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:49:01.769000 12123 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:49:01.769000 12123 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 128, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (2, 4), 'token_back_mode': 'reuse_dispatch_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3585 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3585 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3585 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3585 n=30
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3585 n=30
+BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3585 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3585 n=30
+
+
+
+BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3585 n=30
+
+[rank0]:[W813 03:49:27.208758834 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+sweep128 [token_back_mode=reuse_dispatch_warps]: 0
+W0813 03:49:31.177000 12461 site-packages/torch/distributed/run.py:874] 
+W0813 03:49:31.177000 12461 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:49:31.177000 12461 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:49:31.177000 12461 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 128, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 16, 'epi_flag_batch': (2, 4), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3431 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3431 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3431 n=30
+
+BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3431 n=30
+BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3431 n=30
+BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3431 n=30
+
+BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3431 n=30
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3431 n=30
+[rank0]:[W813 03:49:57.506023949 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+sweep128 [flag_batch=16]: 0
+W0813 03:50:00.608000 12812 site-packages/torch/distributed/run.py:874] 
+W0813 03:50:00.608000 12812 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:50:00.608000 12812 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:50:00.608000 12812 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 128, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': None, 'flag_batch': 4, 'epi_flag_batch': (2, 4), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.4065 n=30BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.4065 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.4065 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.4065 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.4065 n=30
+
+
+
+
+BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.4065 n=30
+BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.4065 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.4065 n=30
+
+[rank0]:[W813 03:50:26.391174821 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+sweep128 [group_hint=None]: 0
+W0813 03:50:30.488000 13150 site-packages/torch/distributed/run.py:874] 
+W0813 03:50:30.488000 13150 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:50:30.488000 13150 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:50:30.488000 13150 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (128, 128, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (2, 4), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3533 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3533 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3533 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3533 n=30
+BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3533 n=30
+BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3533 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3533 n=30
+
+
+
+
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none median_ms=0.3533 n=30
+[rank0]:[W813 03:50:55.402767316 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+sweep128 [mma_tiler_mnk=(128,128,256)]: 0
+W0813 03:50:59.352000 13495 site-packages/torch/distributed/run.py:874] 
+W0813 03:50:59.352000 13495 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:50:59.352000 13495 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:50:59.352000 13495 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 128, 256), 'cluster_shape_mnk': (1, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (2, 4), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+sgl-b300-inference:13570:13570 [6] NVSHMEM ERROR : Some NVSHMEM Symmetric memory was not freed explicitly (you may have forgotten to clean up before finalizing, or an unrelated exception crashed the program before it was freed)
+sgl-b300-inference:13571:13571 [7] NVSHMEM ERROR : Some NVSHMEM Symmetric memory was not freed explicitly (you may have forgotten to clean up before finalizing, or an unrelated exception crashed the program before it was freed)
+sgl-b300-inference:13566:13566 [2] NVSHMEM ERROR : Some NVSHMEM Symmetric memory was not freed explicitly (you may have forgotten to clean up before finalizing, or an unrelated exception crashed the program before it was freed)
+sgl-b300-inference:13564:13564 [0] NVSHMEM ERROR : Some NVSHMEM Symmetric memory was not freed explicitly (you may have forgotten to clean up before finalizing, or an unrelated exception crashed the program before it was freed)
+sgl-b300-inference:13567:13567 [3] NVSHMEM ERROR : Some NVSHMEM Symmetric memory was not freed explicitly (you may have forgotten to clean up before finalizing, or an unrelated exception crashed the program before it was freed)
+sgl-b300-inference:13569:13569 [5] NVSHMEM ERROR : Some NVSHMEM Symmetric memory was not freed explicitly (you may have forgotten to clean up before finalizing, or an unrelated exception crashed the program before it was freed)
+sgl-b300-inference:13568:13568 [4] NVSHMEM ERROR : Some NVSHMEM Symmetric memory was not freed explicitly (you may have forgotten to clean up before finalizing, or an unrelated exception crashed the program before it was freed)
+sgl-b300-inference:13565:13565 [1] NVSHMEM ERROR : Some NVSHMEM Symmetric memory was not freed explicitly (you may have forgotten to clean up before finalizing, or an unrelated exception crashed the program before it was freed)
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank6]:     main()
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 201, in main
+[rank6]:     run_once()
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 190, in run_once
+[rank6]:     nvfp4_mega_moe(
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1269, in nvfp4_mega_moe
+[rank6]:     out = symm_buffer._frontend.run(inputs, num_tokens=None, sync=False)
+[rank6]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 328, in run
+[rank6]:     mega = self._ensure_mega_compiled(inputs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 481, in _ensure_mega_compiled
+[rank6]:     kernel = Sm100MegaMoEKernel(
+[rank6]:              ^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/megamoe_kernel.py", line 254, in __init__
+[rank6]:     super().__init__(
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 142, in __init__
+[rank6]:     self._validate_mma_tiler_and_cluster_shape()
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 258, in _validate_mma_tiler_and_cluster_shape
+[rank6]:     raise ValueError(
+[rank6]: ValueError: cluster_shape M (1) must be even when use_2cta_instrs=True
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 201, in main
+[rank2]:     run_once()
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 190, in run_once
+[rank2]:     nvfp4_mega_moe(
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1269, in nvfp4_mega_moe
+[rank2]:     out = symm_buffer._frontend.run(inputs, num_tokens=None, sync=False)
+[rank2]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 328, in run
+[rank2]:     mega = self._ensure_mega_compiled(inputs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 481, in _ensure_mega_compiled
+[rank2]:     kernel = Sm100MegaMoEKernel(
+[rank2]:              ^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/megamoe_kernel.py", line 254, in __init__
+[rank2]:     super().__init__(
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 142, in __init__
+[rank2]:     self._validate_mma_tiler_and_cluster_shape()
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 258, in _validate_mma_tiler_and_cluster_shape
+[rank2]:     raise ValueError(
+[rank2]: ValueError: cluster_shape M (1) must be even when use_2cta_instrs=True
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank7]:     main()
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 201, in main
+[rank7]:     run_once()
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 190, in run_once
+[rank7]:     nvfp4_mega_moe(
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1269, in nvfp4_mega_moe
+[rank7]:     out = symm_buffer._frontend.run(inputs, num_tokens=None, sync=False)
+[rank7]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 328, in run
+[rank7]:     mega = self._ensure_mega_compiled(inputs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 481, in _ensure_mega_compiled
+[rank7]:     kernel = Sm100MegaMoEKernel(
+[rank7]:              ^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/megamoe_kernel.py", line 254, in __init__
+[rank7]:     super().__init__(
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 142, in __init__
+[rank7]:     self._validate_mma_tiler_and_cluster_shape()
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 258, in _validate_mma_tiler_and_cluster_shape
+[rank7]:     raise ValueError(
+[rank7]: ValueError: cluster_shape M (1) must be even when use_2cta_instrs=True
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank3]:     main()
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 201, in main
+[rank3]:     run_once()
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 190, in run_once
+[rank3]:     nvfp4_mega_moe(
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1269, in nvfp4_mega_moe
+[rank3]:     out = symm_buffer._frontend.run(inputs, num_tokens=None, sync=False)
+[rank3]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 328, in run
+[rank3]:     mega = self._ensure_mega_compiled(inputs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 481, in _ensure_mega_compiled
+[rank3]:     kernel = Sm100MegaMoEKernel(
+[rank3]:              ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/megamoe_kernel.py", line 254, in __init__
+[rank3]:     super().__init__(
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 142, in __init__
+[rank3]:     self._validate_mma_tiler_and_cluster_shape()
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 258, in _validate_mma_tiler_and_cluster_shape
+[rank3]:     raise ValueError(
+[rank3]: ValueError: cluster_shape M (1) must be even when use_2cta_instrs=True
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank5]:     main()
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 201, in main
+[rank5]:     run_once()
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 190, in run_once
+[rank5]:     nvfp4_mega_moe(
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1269, in nvfp4_mega_moe
+[rank5]:     out = symm_buffer._frontend.run(inputs, num_tokens=None, sync=False)
+[rank5]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 328, in run
+[rank5]:     mega = self._ensure_mega_compiled(inputs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 481, in _ensure_mega_compiled
+[rank5]:     kernel = Sm100MegaMoEKernel(
+[rank5]:              ^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/megamoe_kernel.py", line 254, in __init__
+[rank5]:     super().__init__(
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 142, in __init__
+[rank5]:     self._validate_mma_tiler_and_cluster_shape()
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 258, in _validate_mma_tiler_and_cluster_shape
+[rank5]:     raise ValueError(
+[rank5]: ValueError: cluster_shape M (1) must be even when use_2cta_instrs=True
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 201, in main
+[rank1]:     run_once()
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 190, in run_once
+[rank1]:     nvfp4_mega_moe(
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1269, in nvfp4_mega_moe
+[rank1]:     out = symm_buffer._frontend.run(inputs, num_tokens=None, sync=False)
+[rank1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 328, in run
+[rank1]:     mega = self._ensure_mega_compiled(inputs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 481, in _ensure_mega_compiled
+[rank1]:     kernel = Sm100MegaMoEKernel(
+[rank1]:              ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/megamoe_kernel.py", line 254, in __init__
+[rank1]:     super().__init__(
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 142, in __init__
+[rank1]:     self._validate_mma_tiler_and_cluster_shape()
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 258, in _validate_mma_tiler_and_cluster_shape
+[rank1]:     raise ValueError(
+[rank1]: ValueError: cluster_shape M (1) must be even when use_2cta_instrs=True
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank4]:     main()
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 201, in main
+[rank4]:     run_once()
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 190, in run_once
+[rank4]:     nvfp4_mega_moe(
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1269, in nvfp4_mega_moe
+[rank4]:     out = symm_buffer._frontend.run(inputs, num_tokens=None, sync=False)
+[rank4]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 328, in run
+[rank4]:     mega = self._ensure_mega_compiled(inputs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 481, in _ensure_mega_compiled
+[rank4]:     kernel = Sm100MegaMoEKernel(
+[rank4]:              ^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/megamoe_kernel.py", line 254, in __init__
+[rank4]:     super().__init__(
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 142, in __init__
+[rank4]:     self._validate_mma_tiler_and_cluster_shape()
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 258, in _validate_mma_tiler_and_cluster_shape
+[rank4]:     raise ValueError(
+[rank4]: ValueError: cluster_shape M (1) must be even when use_2cta_instrs=True
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 201, in main
+[rank0]:     run_once()
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 190, in run_once
+[rank0]:     nvfp4_mega_moe(
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1269, in nvfp4_mega_moe
+[rank0]:     out = symm_buffer._frontend.run(inputs, num_tokens=None, sync=False)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 328, in run
+[rank0]:     mega = self._ensure_mega_compiled(inputs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 481, in _ensure_mega_compiled
+[rank0]:     kernel = Sm100MegaMoEKernel(
+[rank0]:              ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/megamoe_kernel.py", line 254, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 142, in __init__
+[rank0]:     self._validate_mma_tiler_and_cluster_shape()
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/src/moe_nvfp4_swapab/kernel_fc12.py", line 258, in _validate_mma_tiler_and_cluster_shape
+[rank0]:     raise ValueError(
+[rank0]: ValueError: cluster_shape M (1) must be even when use_2cta_instrs=True
+[rank0]:[W813 03:51:22.325076802 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0813 03:51:24.035000 13495 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 13564 closing signal SIGTERM
+W0813 03:51:24.035000 13495 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 13565 closing signal SIGTERM
+W0813 03:51:24.035000 13495 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 13566 closing signal SIGTERM
+W0813 03:51:24.035000 13495 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 13568 closing signal SIGTERM
+W0813 03:51:24.035000 13495 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 13569 closing signal SIGTERM
+W0813 03:51:24.035000 13495 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 13570 closing signal SIGTERM
+W0813 03:51:24.035000 13495 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 13571 closing signal SIGTERM
+E0813 03:51:24.716000 13495 site-packages/torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 3 (pid: 13567) of binary: /home/devuser/conda/envs/py312/bin/python3.12
+Traceback (most recent call last):
+  File "/home/devuser/conda/envs/py312/bin/torchrun", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1028, in main
+    run(args)
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1019, in run
+    elastic_launch(
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 194, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 383, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/megamoe_iket_driver.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-08-13_03:51:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 13564) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-08-13_03:51:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 13565) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2026-08-13_03:51:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 13566) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-08-13_03:51:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 13568) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2026-08-13_03:51:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 13569) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2026-08-13_03:51:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 13570) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2026-08-13_03:51:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 13571) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-13_03:51:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 13567) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+sweep128 [cluster_shape_mnk=(1,1,1)]: 1
+W0813 03:51:26.327000 13833 site-packages/torch/distributed/run.py:874] 
+W0813 03:51:26.327000 13833 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:51:26.327000 13833 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:51:26.327000 13833 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 256, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 16, 'epi_flag_batch': (2, 4), 'token_back_mode': 'reuse_dispatch_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=4096 combine=nvfp4 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=5 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=0.8427 n=30BENCH rank=7 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=0.8427 n=30BENCH rank=2 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=0.8427 n=30
+BENCH rank=4 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=0.8427 n=30BENCH rank=0 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=0.8427 n=30BENCH rank=1 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=0.8427 n=30BENCH rank=3 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=0.8427 n=30
+
+
+
+
+BENCH rank=6 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=0.8427 n=30
+
+[rank0]:[W813 03:51:53.720991552 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+sweep4096 [flag_batch=16]: 0
+W0813 03:51:56.647000 14171 site-packages/torch/distributed/run.py:874] 
+W0813 03:51:56.647000 14171 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:51:56.647000 14171 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:51:56.647000 14171 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 256, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 8, 'epi_flag_batch': (2, 4), 'token_back_mode': 'standalone_warps', 'load_balance_mode': 'atomic_counter'}
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank3]:     main()
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 151, in main
+[rank3]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank3]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank3]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank3]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank3]:     return dataclasses.replace(config, **overrides)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank3]:     return obj.__class__(**changes)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "<string>", line 27, in __init__
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank3]:     raise ValueError(
+[rank3]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'standalone_warps'.
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank7]:     main()
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 151, in main
+[rank7]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank7]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank7]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank7]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank7]:     return dataclasses.replace(config, **overrides)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank7]:     return obj.__class__(**changes)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "<string>", line 27, in __init__
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank7]:     raise ValueError(
+[rank7]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'standalone_warps'.
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 151, in main
+[rank2]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank2]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank2]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank2]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank2]:     return dataclasses.replace(config, **overrides)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank2]:     return obj.__class__(**changes)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "<string>", line 27, in __init__
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank2]:     raise ValueError(
+[rank2]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'standalone_warps'.
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank4]:     main()
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 151, in main
+[rank4]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank4]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank4]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank4]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank4]:     return dataclasses.replace(config, **overrides)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank4]:     return obj.__class__(**changes)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "<string>", line 27, in __init__
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank4]:     raise ValueError(
+[rank4]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'standalone_warps'.
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 151, in main
+[rank1]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank1]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank1]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank1]:     return dataclasses.replace(config, **overrides)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank1]:     return obj.__class__(**changes)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "<string>", line 27, in __init__
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank1]:     raise ValueError(
+[rank1]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'standalone_warps'.
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank6]:     main()
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 151, in main
+[rank6]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank6]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank6]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank6]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank6]:     return dataclasses.replace(config, **overrides)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank6]:     return obj.__class__(**changes)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "<string>", line 27, in __init__
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank6]:     raise ValueError(
+[rank6]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'standalone_warps'.
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank5]:     main()
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 151, in main
+[rank5]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank5]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank5]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank5]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank5]:     return dataclasses.replace(config, **overrides)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank5]:     return obj.__class__(**changes)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "<string>", line 27, in __init__
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank5]:     raise ValueError(
+[rank5]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'standalone_warps'.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 274, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 151, in main
+[rank0]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank0]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank0]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank0]:     return dataclasses.replace(config, **overrides)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank0]:     return obj.__class__(**changes)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "<string>", line 27, in __init__
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank0]:     raise ValueError(
+[rank0]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'standalone_warps'.
+[rank0]:[W813 03:52:20.492222720 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0813 03:52:20.709000 14171 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 14247 closing signal SIGTERM
+W0813 03:52:20.710000 14171 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 14248 closing signal SIGTERM
+W0813 03:52:20.718000 14171 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 14250 closing signal SIGTERM
+W0813 03:52:20.718000 14171 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 14252 closing signal SIGTERM
+W0813 03:52:20.718000 14171 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 14253 closing signal SIGTERM
+W0813 03:52:20.721000 14171 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 14254 closing signal SIGTERM
+E0813 03:52:21.404000 14171 site-packages/torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 2 (pid: 14249) of binary: /home/devuser/conda/envs/py312/bin/python3.12
+Traceback (most recent call last):
+  File "/home/devuser/conda/envs/py312/bin/torchrun", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1028, in main
+    run(args)
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1019, in run
+    elastic_launch(
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 194, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 383, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/megamoe_iket_driver.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-08-13_03:52:20
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 14251) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-08-13_03:52:21
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 14247)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 14247
+[3]:
+  time      : 2026-08-13_03:52:21
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 14248) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-08-13_03:52:21
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 14250) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2026-08-13_03:52:21
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 5 (local_rank: 5)
+  exitcode  : -15 (pid: 14252)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 14252
+[6]:
+  time      : 2026-08-13_03:52:21
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 14253) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2026-08-13_03:52:21
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 14254) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-13_03:52:20
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 14249) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+sweep4096 [token_back_mode=standalone_warps]: 1
+W0813 03:52:22.962000 14484 site-packages/torch/distributed/run.py:874] 
+W0813 03:52:22.962000 14484 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:52:22.962000 14484 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:52:22.962000 14484 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 256, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': None, 'flag_batch': 8, 'epi_flag_batch': (2, 4), 'token_back_mode': 'reuse_dispatch_warps', 'load_balance_mode': 'atomic_counter'}
+MANIFEST warmup mode=bench tokens=4096 combine=nvfp4 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=4 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=1.0824 n=30BENCH rank=7 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=1.0824 n=30BENCH rank=0 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=1.0824 n=30
+BENCH rank=6 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=1.0824 n=30
+BENCH rank=1 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=1.0824 n=30
+BENCH rank=2 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=1.0824 n=30BENCH rank=3 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=1.0824 n=30
+
+
+
+BENCH rank=5 tokens=4096 combine=nvfp4 ikr=False knobs=none median_ms=1.0824 n=30
+[rank0]:[W813 03:52:50.828564440 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+sweep4096 [group_hint=None]: 0
+W0813 03:52:53.534000 14822 site-packages/torch/distributed/run.py:874] 
+W0813 03:52:53.534000 14822 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:52:53.534000 14822 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:52:53.534000 14822 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=bench tokens=2048 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=7 tokens=2048 combine=bf16 ikr=False knobs=none median_ms=0.5992 n=30
+BENCH rank=0 tokens=2048 combine=bf16 ikr=False knobs=none median_ms=0.5992 n=30
+BENCH rank=1 tokens=2048 combine=bf16 ikr=False knobs=none median_ms=0.5992 n=30BENCH rank=2 tokens=2048 combine=bf16 ikr=False knobs=none median_ms=0.5992 n=30
+
+BENCH rank=3 tokens=2048 combine=bf16 ikr=False knobs=none median_ms=0.5992 n=30
+BENCH rank=4 tokens=2048 combine=bf16 ikr=False knobs=none median_ms=0.5992 n=30
+BENCH rank=5 tokens=2048 combine=bf16 ikr=False knobs=none median_ms=0.5992 n=30
+BENCH rank=6 tokens=2048 combine=bf16 ikr=False knobs=none median_ms=0.5992 n=30
+[rank0]:[W813 03:53:19.120816384 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+cd2048-bf16: 0
+W0813 03:53:22.919000 15167 site-packages/torch/distributed/run.py:874] 
+W0813 03:53:22.919000 15167 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:53:22.919000 15167 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:53:22.919000 15167 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=bench tokens=2048 combine=nvfp4 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=0 tokens=2048 combine=nvfp4 ikr=False knobs=none median_ms=0.5295 n=30BENCH rank=7 tokens=2048 combine=nvfp4 ikr=False knobs=none median_ms=0.5295 n=30BENCH rank=3 tokens=2048 combine=nvfp4 ikr=False knobs=none median_ms=0.5295 n=30
+
+BENCH rank=5 tokens=2048 combine=nvfp4 ikr=False knobs=none median_ms=0.5295 n=30
+BENCH rank=1 tokens=2048 combine=nvfp4 ikr=False knobs=none median_ms=0.5295 n=30BENCH rank=6 tokens=2048 combine=nvfp4 ikr=False knobs=none median_ms=0.5295 n=30
+
+
+BENCH rank=2 tokens=2048 combine=nvfp4 ikr=False knobs=none median_ms=0.5295 n=30
+BENCH rank=4 tokens=2048 combine=nvfp4 ikr=False knobs=none median_ms=0.5295 n=30
+[rank0]:[W813 03:53:49.650877460 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+cd2048-nvfp4: 0
+W0813 03:53:52.578000 15505 site-packages/torch/distributed/run.py:874] 
+W0813 03:53:52.578000 15505 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:53:52.578000 15505 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:53:52.578000 15505 site-packages/torch/distributed/run.py:874] *****************************************
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15587-f22351ed-e82885a4-9a3d1caf/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank6]:     main()
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank6]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank6]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank6]:     l1 = _transform_weight_sf(
+[rank6]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank6]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank6]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15582-14a70083-28c91a70-5f44302b/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15583-c5500a1e-b6b409ce-ac989827/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank1]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank1]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank1]:     l1 = _transform_weight_sf(
+[rank1]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank1]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank1]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank2]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank2]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank2]:     l1 = _transform_weight_sf(
+[rank2]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank2]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank2]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15586-a7db7860-90264b98-1ba2afa4/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank5]:     main()
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank5]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank5]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank5]:     l1 = _transform_weight_sf(
+[rank5]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank5]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank5]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15581-19cf4bc9-6e2f21d5-21e0889a/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15584-297b4d42-2909f860-0da4da8c/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank3]:     main()
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank3]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank3]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank3]:     l1 = _transform_weight_sf(
+[rank3]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank3]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank3]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank0]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank0]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank0]:     l1 = _transform_weight_sf(
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank0]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15585-bd78cbfd-caace0a3-8085a80b/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank4]:     main()
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank4]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank4]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank4]:     l1 = _transform_weight_sf(
+[rank4]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank4]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank4]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15588-16ae0e19-6ad7fef3-a07f9756/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank7]:     main()
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank7]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank7]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank7]:     l1 = _transform_weight_sf(
+[rank7]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank7]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank7]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank0]:[W813 03:54:07.081631802 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0813 03:54:08.469000 15505 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15581 closing signal SIGTERM
+W0813 03:54:08.469000 15505 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15582 closing signal SIGTERM
+W0813 03:54:08.469000 15505 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15583 closing signal SIGTERM
+W0813 03:54:08.473000 15505 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15584 closing signal SIGTERM
+W0813 03:54:08.473000 15505 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15585 closing signal SIGTERM
+W0813 03:54:08.477000 15505 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15586 closing signal SIGTERM
+W0813 03:54:08.477000 15505 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15587 closing signal SIGTERM
+E0813 03:54:09.322000 15505 site-packages/torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 7 (pid: 15588) of binary: /home/devuser/conda/envs/py312/bin/python3.12
+Traceback (most recent call last):
+  File "/home/devuser/conda/envs/py312/bin/torchrun", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1028, in main
+    run(args)
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1019, in run
+    elastic_launch(
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 194, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 383, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/megamoe_deepgemm_driver.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-08-13_03:54:09
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 15581) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-08-13_03:54:09
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 15582)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 15582
+[3]:
+  time      : 2026-08-13_03:54:09
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 15583) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-08-13_03:54:09
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 15584) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2026-08-13_03:54:09
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 15585)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 15585
+[6]:
+  time      : 2026-08-13_03:54:09
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 15586) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2026-08-13_03:54:09
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 15587) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-13_03:54:08
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 15588) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+deepgemm-128: 1
+W0813 03:54:10.899000 15790 site-packages/torch/distributed/run.py:874] 
+W0813 03:54:10.899000 15790 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:54:10.899000 15790 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:54:10.899000 15790 site-packages/torch/distributed/run.py:874] *****************************************
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15865-1137177d-5f893368-6d35969a/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank6]:     main()
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank6]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank6]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank6]:     l1 = _transform_weight_sf(
+[rank6]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank6]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank6]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15860-99ef19f6-50b4ab9e-3080b688/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15862-f94f6152-1e90bda0-cc899375/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank1]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank1]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank1]:     l1 = _transform_weight_sf(
+[rank1]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank1]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank1]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15864-2a66bd50-8a99735d-6149937d/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank3]:     main()
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank3]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank3]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank3]:     l1 = _transform_weight_sf(
+[rank3]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank3]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank3]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank5]:     main()
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank5]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank5]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank5]:     l1 = _transform_weight_sf(
+[rank5]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank5]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank5]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15859-068ceb69-0af1cc3c-82330123/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank0]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank0]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank0]:     l1 = _transform_weight_sf(
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank0]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+  NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /               from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15866-4f3b8676-208def14-eef795cb/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deephome/devuser/.deep_gemm/tmp/15861-b7bdcf3f-c4e0ef9e-cfe54e82/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlas_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+s/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/15863-14bc1e72-3591b6ee-bdd05b57/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank7]:     main()
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank7]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank7]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank7]:     l1 = _transform_weight_sf(
+[rank7]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank7]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank7]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank2]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank2]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank2]:     l1 = _transform_weight_sf(
+[rank2]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank2]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank2]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank4]:     main()
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank4]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank4]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank4]:     l1 = _transform_weight_sf(
+[rank4]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank4]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank4]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank0]:[W813 03:54:26.582246850 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0813 03:54:27.046000 15790 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15859 closing signal SIGTERM
+W0813 03:54:27.046000 15790 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15860 closing signal SIGTERM
+W0813 03:54:27.046000 15790 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15862 closing signal SIGTERM
+W0813 03:54:27.050000 15790 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15863 closing signal SIGTERM
+W0813 03:54:27.050000 15790 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15864 closing signal SIGTERM
+W0813 03:54:27.050000 15790 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15865 closing signal SIGTERM
+W0813 03:54:27.050000 15790 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 15866 closing signal SIGTERM
+E0813 03:54:27.894000 15790 site-packages/torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 2 (pid: 15861) of binary: /home/devuser/conda/envs/py312/bin/python3.12
+Traceback (most recent call last):
+  File "/home/devuser/conda/envs/py312/bin/torchrun", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1028, in main
+    run(args)
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1019, in run
+    elastic_launch(
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 194, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 383, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/megamoe_deepgemm_driver.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-08-13_03:54:27
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 15859) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-08-13_03:54:27
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 15860)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 15860
+[3]:
+  time      : 2026-08-13_03:54:27
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 15862) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-08-13_03:54:27
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 15863) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2026-08-13_03:54:27
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 15864) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2026-08-13_03:54:27
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 15865) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2026-08-13_03:54:27
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 15866) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-13_03:54:27
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 15861) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+deepgemm-2048: 1
+W0813 03:54:29.492000 16075 site-packages/torch/distributed/run.py:874] 
+W0813 03:54:29.492000 16075 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 03:54:29.492000 16075 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 03:54:29.492000 16075 site-packages/torch/distributed/run.py:874] *****************************************
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/16144-c6912ac0-13ecb619-26527b13/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank0]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank0]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank0]:     l1 = _transform_weight_sf(
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank0]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/16151-2f57b857-8ee9e5c5-04460d74/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank7]:     main()
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank7]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank7]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank7]:     l1 = _transform_weight_sf(
+[rank7]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank7]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank7]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/16148-bb8d6c24-c4ba3247-e13029cc/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank4]:     main()
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank4]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank4]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank4]:     l1 = _transform_weight_sf(
+[rank4]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank4]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank4]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/16147-938d3efc-b2032622-df8dac10/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank3]:     main()
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank3]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank3]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank3]:     l1 = _transform_weight_sf(
+[rank3]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank3]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank3]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/16149-b1a857e9-a5168c7d-cebc6b49/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/16145-61ce86da-36cb1ecc-398699e6/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank1]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank1]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank1]:     l1 = _transform_weight_sf(
+[rank1]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank1]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank1]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank5]:     main()
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank5]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank5]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank5]:     l1 = _transform_weight_sf(
+[rank5]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank5]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank5]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/16146-d0aa5227-a36fbca3-3e15af32/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank2]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank2]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank2]:     l1 = _transform_weight_sf(
+[rank2]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank2]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank2]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+NVCC compilation failed: In file included from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/math.cuh:4,
+                 from /home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/impls/smxx_layout.cuh:3,
+                 from /home/devuser/.deep_gemm/tmp/16150-ecf6da52-45fd75dd-d1daf248/kernel.cu:3:
+/home/jessie/iket-lab/DeepGEMM/deep_gemm/include/deep_gemm/common/compile.cuh:3:10: fatal error: cutlass/detail/helper_macros.hpp: No such file or directory
+    3 | #include <cutlass/detail/helper_macros.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 125, in <module>
+[rank6]:     main()
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_deepgemm_driver.py", line 91, in main
+[rank6]:     transformed_l1, transformed_l2 = preprocess_mega_weights(
+[rank6]:                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 78, in preprocess_mega_weights
+[rank6]:     l1 = _transform_weight_sf(
+[rank6]:          ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/backends/mega/kernel/deep_gemm_mega/weights.py", line 60, in _transform_weight_sf
+[rank6]:     return w, deep_gemm.transform_sf_into_required_layout(
+[rank6]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]: RuntimeError: Assertion error (csrc/apis/../jit_kernels/impls/../../jit/compiler.hpp:228): false and "NVCC compilation failed"
+[rank0]:[W813 03:54:44.945614571 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0813 03:54:45.445000 16075 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 16144 closing signal SIGTERM
+W0813 03:54:45.446000 16075 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 16145 closing signal SIGTERM
+W0813 03:54:45.446000 16075 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 16146 closing signal SIGTERM
+W0813 03:54:45.450000 16075 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 16147 closing signal SIGTERM
+W0813 03:54:45.453000 16075 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 16148 closing signal SIGTERM
+W0813 03:54:45.453000 16075 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 16149 closing signal SIGTERM
+W0813 03:54:45.453000 16075 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 16151 closing signal SIGTERM
+E0813 03:54:46.287000 16075 site-packages/torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 6 (pid: 16150) of binary: /home/devuser/conda/envs/py312/bin/python3.12
+Traceback (most recent call last):
+  File "/home/devuser/conda/envs/py312/bin/torchrun", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1028, in main
+    run(args)
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1019, in run
+    elastic_launch(
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 194, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 383, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/megamoe_deepgemm_driver.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-08-13_03:54:46
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 16144) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-08-13_03:54:46
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 16145)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 16145
+[3]:
+  time      : 2026-08-13_03:54:46
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 16146) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-08-13_03:54:46
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 16147) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2026-08-13_03:54:46
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 16148) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2026-08-13_03:54:46
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 16149) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2026-08-13_03:54:46
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 16151)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 16151
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-13_03:54:45
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 16150) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+deepgemm-4096: 1

@@ -1,0 +1,115 @@
+[run-iket] ============= Dry run application first to collect some info... =============
+W0813 02:54:25.796000 3891 site-packages/torch/distributed/run.py:874] 
+W0813 02:54:25.796000 3891 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 02:54:25.796000 3891 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 02:54:25.796000 3891 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST exec=0 m=8 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0120
+MANIFEST exec=1 m=8 phase=warmup pos=- proto=bt norm_cos=0.999997 prenorm_max_diff=0.0120
+MANIFEST exec=2 m=8 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0149
+MANIFEST exec=3 m=8 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=4 m=8 phase=latin order=0 pos=1 proto=bt
+MANIFEST exec=5 m=8 phase=latin order=0 pos=2 proto=ht
+MANIFEST exec=6 m=8 phase=latin order=1 pos=0 proto=bt
+MANIFEST exec=7 m=8 phase=latin order=1 pos=1 proto=ht
+MANIFEST exec=8 m=8 phase=latin order=1 pos=2 proto=ll
+MANIFEST exec=9 m=8 phase=latin order=2 pos=0 proto=ht
+MANIFEST exec=10 m=8 phase=latin order=2 pos=1 proto=ll
+MANIFEST exec=11 m=8 phase=latin order=2 pos=2 proto=bt
+MANIFEST exec=12 m=32 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0154
+MANIFEST exec=13 m=32 phase=warmup pos=- proto=bt norm_cos=0.999997 prenorm_max_diff=0.0154
+MANIFEST exec=14 m=32 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0198
+MANIFEST exec=15 m=32 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=16 m=32 phase=latin order=0 pos=1 proto=bt
+MANIFEST exec=17 m=32 phase=latin order=0 pos=2 proto=ht
+MANIFEST exec=18 m=32 phase=latin order=1 pos=0 proto=bt
+MANIFEST exec=19 m=32 phase=latin order=1 pos=1 proto=ht
+MANIFEST exec=20 m=32 phase=latin order=1 pos=2 proto=ll
+MANIFEST exec=21 m=32 phase=latin order=2 pos=0 proto=ht
+MANIFEST exec=22 m=32 phase=latin order=2 pos=1 proto=ll
+MANIFEST exec=23 m=32 phase=latin order=2 pos=2 proto=bt
+MANIFEST exec=24 m=256 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0155
+MANIFEST exec=25 m=256 phase=warmup pos=- proto=bt norm_cos=0.999997 prenorm_max_diff=0.0155
+MANIFEST exec=26 m=256 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0209
+MANIFEST exec=27 m=256 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=28 m=256 phase=latin order=0 pos=1 proto=bt
+MANIFEST exec=29 m=256 phase=latin order=0 pos=2 proto=ht
+MANIFEST exec=30 m=256 phase=latin order=1 pos=0 proto=bt
+MANIFEST exec=31 m=256 phase=latin order=1 pos=1 proto=ht
+MANIFEST exec=32 m=256 phase=latin order=1 pos=2 proto=ll
+MANIFEST exec=33 m=256 phase=latin order=2 pos=0 proto=ht
+MANIFEST exec=34 m=256 phase=latin order=2 pos=1 proto=ll
+MANIFEST exec=35 m=256 phase=latin order=2 pos=2 proto=bt
+MANIFEST exec=36 m=1024 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0156
+MANIFEST exec=37 m=1024 phase=warmup pos=- proto=bt norm_cos=0.999997 prenorm_max_diff=0.0156
+MANIFEST exec=38 m=1024 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0205
+MANIFEST exec=39 m=1024 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=40 m=1024 phase=latin order=0 pos=1 proto=bt
+MANIFEST exec=41 m=1024 phase=latin order=0 pos=2 proto=ht
+MANIFEST exec=42 m=1024 phase=latin order=1 pos=0 proto=bt
+MANIFEST exec=43 m=1024 phase=latin order=1 pos=1 proto=ht
+MANIFEST exec=44 m=1024 phase=latin order=1 pos=2 proto=ll
+MANIFEST exec=45 m=1024 phase=latin order=2 pos=0 proto=ht
+MANIFEST exec=46 m=1024 phase=latin order=2 pos=1 proto=ll
+MANIFEST exec=47 m=1024 phase=latin order=2 pos=2 proto=bt
+NOTE m=4096: bt skipped (BT_ONLY_CONFIG caps at m=1024)
+MANIFEST exec=48 m=4096 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0156
+MANIFEST exec=49 m=4096 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0224
+MANIFEST exec=50 m=4096 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=51 m=4096 phase=latin order=0 pos=1 proto=ht
+MANIFEST exec=52 m=4096 phase=latin order=1 pos=0 proto=ht
+MANIFEST exec=53 m=4096 phase=latin order=1 pos=1 proto=ll
+MANIFEST exec=54 m=4096 phase=latin order=2 pos=0 proto=ll
+MANIFEST exec=55 m=4096 phase=latin order=2 pos=1 proto=ht
+MANIFEST exec=56 m=4096 phase=latin order=3 pos=0 proto=ht
+MANIFEST exec=57 m=4096 phase=latin order=3 pos=1 proto=ll
+NOTE m=8192: bt skipped (BT_ONLY_CONFIG caps at m=1024)
+MANIFEST exec=58 m=8192 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0156
+MANIFEST exec=59 m=8192 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0224
+MANIFEST exec=60 m=8192 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=61 m=8192 phase=latin order=0 pos=1 proto=ht
+MANIFEST exec=62 m=8192 phase=latin order=1 pos=0 proto=ht
+MANIFEST exec=63 m=8192 phase=latin order=1 pos=1 proto=ll
+MANIFEST exec=64 m=8192 phase=latin order=2 pos=0 proto=ll
+MANIFEST exec=65 m=8192 phase=latin order=2 pos=1 proto=ht
+MANIFEST exec=66 m=8192 phase=latin order=3 pos=0 proto=ht
+MANIFEST exec=67 m=8192 phase=latin order=3 pos=1 proto=ll
+done: 68 executions across m=[8, 32, 256, 1024, 4096, 8192]
+[run-iket] Auto-computed context buffer size: 5.81 GB (6,237,285,580 bytes)
+[run-iket] ============= Run application for real profiling... =============
+W0813 02:54:48.463000 4098 site-packages/torch/distributed/run.py:874] 
+W0813 02:54:48.463000 4098 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 02:54:48.463000 4098 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 02:54:48.463000 4098 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST exec=0 m=8 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0120
+MANIFEST exec=1 m=8 phase=warmup pos=- proto=bt norm_cos=0.999997 prenorm_max_diff=0.0120
+MANIFEST exec=2 m=8 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0149
+MANIFEST exec=3 m=8 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=4 m=8 phase=latin order=0 pos=1 proto=bt
+MANIFEST exec=5 m=8 phase=latin order=0 pos=2 proto=ht
+MANIFEST exec=6 m=8 phase=latin order=1 pos=0 proto=bt
+MANIFEST exec=7 m=8 phase=latin order=1 pos=1 proto=ht
+MANIFEST exec=8 m=8 phase=latin order=1 pos=2 proto=ll
+MANIFEST exec=9 m=8 phase=latin order=2 pos=0 proto=ht
+MANIFEST exec=10 m=8 phase=latin order=2 pos=1 proto=ll
+MANIFEST exec=11 m=8 phase=latin order=2 pos=2 proto=bt
+MANIFEST exec=12 m=32 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0154
+MANIFEST exec=13 m=32 phase=warmup pos=- proto=bt norm_cos=0.999997 prenorm_max_diff=0.0154
+MANIFEST exec=14 m=32 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0198
+MANIFEST exec=15 m=32 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=16 m=32 phase=latin order=0 pos=1 proto=bt
+MANIFEST exec=17 m=32 phase=latin order=0 pos=2 proto=ht
+MANIFEST exec=18 m=32 phase=latin order=1 pos=0 proto=bt
+MANIFEST exec=19 m=32 phase=latin order=1 pos=1 proto=ht
+MANIFEST exec=20 m=32 phase=latin order=1 pos=2 proto=ll
+MANIFEST exec=21 m=32 phase=latin order=2 pos=0 proto=ht
+MANIFEST exec=22 m=32 phase=latin order=2 pos=1 proto=ll
+MANIFEST exec=23 m=32 phase=latin order=2 pos=2 proto=bt
+MANIFEST exec=24 m=256 phase=warmup pos=- proto=ll norm_cos=0.999997 prenorm_max_diff=0.0155
+MANIFEST exec=25 m=256 phase=warmup pos=- proto=bt norm_cos=0.999997 prenorm_max_diff=0.0155
+MANIFEST exec=26 m=256 phase=warmup pos=- proto=ht norm_cos=0.999997 prenorm_max_diff=0.0209
+MANIFEST exec=27 m=256 phase=latin order=0 pos=0 proto=ll
+MANIFEST exec=28 m=256 phase=latin order=0 pos=1 proto=bt
+MANIFEST exec=29 m=256 phase=latin order=0 pos=2 proto=ht
+MANIFEST exec=30 m=256 phase=latin order=1 pos=0 proto=bt
+MANIFEST exec=31 m=256 phase=latin order=1 pos=1 proto=ht
+MANIFEST exec=32 m=256 phase=latin order=1 pos=2 proto=ll

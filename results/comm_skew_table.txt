@@ -1,0 +1,10 @@
+pid        wall_us epi_arrive  bar_sync     ldst flag_wait final_bar  (mean us, last launch)
+0x134e   (no instrumented launches - torchrun parent process)
+0x1394       552.2       88.9      49.6     60.0      1.13       3.5
+0x1395       384.6        5.5      30.3     60.2      1.11       3.5
+0x1396       187.8       77.2       7.8     58.2      1.10       3.8
+0x1397       351.4        5.3      26.4     59.9      1.15       3.7
+0x1398       240.6      103.3      12.6     65.3      1.20       3.8
+0x1399       490.8       53.6      42.5     60.4      1.09       3.7
+0x139a       438.5       23.9      36.5     60.6      1.15       3.3
+0x139b       785.6       85.6      76.7     59.8      1.09       3.6

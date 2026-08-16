@@ -1,0 +1,30 @@
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+Running Blackwell Persistent Dense GEMM test with:Tolerance: 0.1
+mnkl: (2048, 2048, 4096, 1)Use cold L2: False
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+rank 3: gemm+two_shot allreduce OK
+rank 5: gemm+two_shot allreduce OK
+rank 7: gemm+two_shot allreduce OK
+rank 0: gemm+two_shot allreduce OK
+rank 4: gemm+two_shot allreduce OK
+rank 1: gemm+two_shot allreduce OK
+rank 6: gemm+two_shot allreduce OK
+rank 2: gemm+two_shot allreduce OK
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)
+Running Blackwell Persistent Dense GEMM test with:
+mnkl: (2048, 2048, 4096, 1)

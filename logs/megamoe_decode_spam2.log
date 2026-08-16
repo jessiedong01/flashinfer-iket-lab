@@ -1,0 +1,554 @@
+W0813 07:24:56.412000 33629 site-packages/torch/distributed/run.py:874] 
+W0813 07:24:56.412000 33629 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:24:56.412000 33629 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:24:56.412000 33629 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=True experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=1 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=8.9048 n=30
+BENCH rank=3 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=8.9048 n=30
+BENCH rank=4 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=8.9048 n=30
+BENCH rank=2 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=8.9048 n=30
+BENCH rank=5 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=8.9048 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=8.9048 n=30
+
+BENCH rank=0 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=8.9048 n=30
+BENCH rank=7 tokens=128 combine=bf16 ikr=True knobs=none closure=view median_ms=8.9048 n=30
+[rank0]:[W813 07:25:24.278749687 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --ikr]: 0
+W0813 07:25:27.645000 33968 site-packages/torch/distributed/run.py:874] 
+W0813 07:25:27.645000 33968 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:25:27.645000 33968 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:25:27.645000 33968 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=bench tokens=128 combine=mxfp8 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=0 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=8.9037 n=30
+BENCH rank=1 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=8.9037 n=30
+BENCH rank=3 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=8.9037 n=30BENCH rank=5 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=8.9037 n=30BENCH rank=2 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=8.9037 n=30BENCH rank=6 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=8.9037 n=30
+BENCH rank=4 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=8.9037 n=30BENCH rank=7 tokens=128 combine=mxfp8 ikr=False knobs=none closure=view median_ms=8.9037 n=30
+
+
+
+
+[rank0]:[W813 07:25:55.851767413 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --combine mxfp8]: 0
+W0813 07:25:58.334000 34314 site-packages/torch/distributed/run.py:874] 
+W0813 07:25:58.334000 34314 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:25:58.334000 34314 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:25:58.334000 34314 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 317, in <module>
+[rank6]:     main()
+[rank6]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 159, in main
+[rank6]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank6]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank6]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank6]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank6]:     return dataclasses.replace(config, **overrides)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank6]:     return obj.__class__(**changes)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "<string>", line 27, in __init__
+[rank6]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank6]:     raise ValueError(
+[rank6]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'epi_warps'.
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 317, in <module>
+[rank5]:     main()
+[rank5]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 159, in main
+[rank5]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank5]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank5]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank5]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank5]:     return dataclasses.replace(config, **overrides)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank5]:     return obj.__class__(**changes)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "<string>", line 27, in __init__
+[rank5]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank5]:     raise ValueError(
+[rank5]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'epi_warps'.
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 317, in <module>
+[rank3]:     main()
+[rank3]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 159, in main
+[rank3]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank3]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank3]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank3]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank3]:     return dataclasses.replace(config, **overrides)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank3]:     return obj.__class__(**changes)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "<string>", line 27, in __init__
+[rank3]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank3]:     raise ValueError(
+[rank3]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'epi_warps'.
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 317, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 159, in main
+[rank2]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank2]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank2]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank2]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank2]:     return dataclasses.replace(config, **overrides)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank2]:     return obj.__class__(**changes)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "<string>", line 27, in __init__
+[rank2]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank2]:     raise ValueError(
+[rank2]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'epi_warps'.
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 317, in <module>
+[rank4]:     main()
+[rank4]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 159, in main
+[rank4]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank4]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank4]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank4]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank4]:     return dataclasses.replace(config, **overrides)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank4]:     return obj.__class__(**changes)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "<string>", line 27, in __init__
+[rank4]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank4]:     raise ValueError(
+[rank4]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'epi_warps'.
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 317, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 159, in main
+[rank1]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank1]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank1]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank1]:     return dataclasses.replace(config, **overrides)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank1]:     return obj.__class__(**changes)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "<string>", line 27, in __init__
+[rank1]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank1]:     raise ValueError(
+[rank1]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'epi_warps'.
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 317, in <module>
+[rank7]:     main()
+[rank7]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 159, in main
+[rank7]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank7]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank7]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank7]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank7]:     return dataclasses.replace(config, **overrides)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank7]:     return obj.__class__(**changes)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "<string>", line 27, in __init__
+[rank7]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank7]:     raise ValueError(
+[rank7]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'epi_warps'.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 317, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/jessie/iket-lab/scripts/megamoe_iket_driver.py", line 159, in main
+[rank0]:     symm_buffer = get_symm_buffer_for_mega_moe(
+[rank0]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 1107, in get_symm_buffer_for_mega_moe
+[rank0]:     cfg = with_knobs(cfg, resolved_knobs)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/tuner.py", line 274, in with_knobs
+[rank0]:     return dataclasses.replace(config, **overrides)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/devuser/conda/envs/py312/lib/python3.12/dataclasses.py", line 1588, in replace
+[rank0]:     return obj.__class__(**changes)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "<string>", line 27, in __init__
+[rank0]:   File "/home/jessie/iket-lab/flashinfer/flashinfer/moe_ep/kernel_src/sm100/cutedsl_megamoe/shim/nvfp4.py", line 160, in __post_init__
+[rank0]:     raise ValueError(
+[rank0]: ValueError: combine_dtype != 'bf16' is currently only wired for token_back_mode='reuse_dispatch_warps'; got 'epi_warps'.
+[rank0]:[W813 07:26:22.178959515 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0813 07:26:23.441000 34314 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 34384 closing signal SIGTERM
+W0813 07:26:23.442000 34314 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 34385 closing signal SIGTERM
+W0813 07:26:23.442000 34314 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 34386 closing signal SIGTERM
+W0813 07:26:23.442000 34314 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 34387 closing signal SIGTERM
+W0813 07:26:23.442000 34314 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 34388 closing signal SIGTERM
+W0813 07:26:23.445000 34314 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 34389 closing signal SIGTERM
+W0813 07:26:23.449000 34314 site-packages/torch/distributed/elastic/multiprocessing/api.py:1014] Sending process 34390 closing signal SIGTERM
+E0813 07:26:24.436000 34314 site-packages/torch/distributed/elastic/multiprocessing/api.py:988] failed (exitcode: 1) local_rank: 0 (pid: 34383) of binary: /home/devuser/conda/envs/py312/bin/python3.12
+Traceback (most recent call last):
+  File "/home/devuser/conda/envs/py312/bin/torchrun", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 367, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1028, in main
+    run(args)
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/run.py", line 1019, in run
+    elastic_launch(
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 194, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/home/devuser/conda/envs/py312/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 383, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+scripts/megamoe_iket_driver.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-08-13_07:26:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 34384)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 34384
+[2]:
+  time      : 2026-08-13_07:26:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 34385) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2026-08-13_07:26:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 34386) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-08-13_07:26:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 34387)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 34387
+[5]:
+  time      : 2026-08-13_07:26:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 34388) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2026-08-13_07:26:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 34389)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 34389
+[7]:
+  time      : 2026-08-13_07:26:24
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 34390) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-08-13_07:26:23
+  host      : sgl-b300-inference.datacrunch.io
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 34383) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --combine mxfp8 --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2)]: 1
+W0813 07:26:25.508000 34621 site-packages/torch/distributed/run.py:874] 
+W0813 07:26:25.508000 34621 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:26:25.508000 34621 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:26:25.508000 34621 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter', 'num_sched_stages': 3}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30
+
+
+
+
+
+BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30
+[rank0]:[W813 07:26:53.493775530 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2) --knob num_sched_stages=3]: 0
+W0813 07:26:56.154000 34960 site-packages/torch/distributed/run.py:874] 
+W0813 07:26:56.154000 34960 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:26:56.154000 34960 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:26:56.154000 34960 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter', 'num_sched_stages': 4}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=8.9028 n=30
+BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=8.9028 n=30
+BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=8.9028 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=8.9028 n=30
+
+BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=8.9028 n=30
+BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=8.9028 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=8.9028 n=30
+
+BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=8.9028 n=30
+[rank0]:[W813 07:27:24.465575409 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2) --knob num_sched_stages=4]: 0
+W0813 07:27:26.819000 35306 site-packages/torch/distributed/run.py:874] 
+W0813 07:27:26.819000 35306 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:27:26.819000 35306 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:27:26.819000 35306 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter', 'clc_bundle_size': 2}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30
+BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30
+
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30
+BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3359 n=30
+
+
+
+[rank0]:[W813 07:27:53.775132632 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2) --knob clc_bundle_size=2]: 0
+W0813 07:27:56.487000 35645 site-packages/torch/distributed/run.py:874] 
+W0813 07:27:56.487000 35645 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:27:56.487000 35645 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:27:56.487000 35645 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter', 'clc_bundle_size': 4}
+MANIFEST warmup mode=bench tokens=128 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=4 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3340 n=30
+BENCH rank=5 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3340 n=30BENCH rank=1 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3340 n=30BENCH rank=2 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3340 n=30
+BENCH rank=3 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3340 n=30BENCH rank=0 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3340 n=30
+BENCH rank=7 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3340 n=30
+
+
+
+BENCH rank=6 tokens=128 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3340 n=30
+[rank0]:[W813 07:28:23.691481147 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 128 --closure view --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2) --knob clc_bundle_size=4]: 0
+W0813 07:28:26.294000 35991 site-packages/torch/distributed/run.py:874] 
+W0813 07:28:26.294000 35991 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:28:26.294000 35991 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:28:26.294000 35991 site-packages/torch/distributed/run.py:874] *****************************************
+YREF saved to out/yref/m64.rank*.pt
+MANIFEST warmup mode=bench tokens=64 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+BITEXACT-VIEW rank=1 exact=True max|d|=0
+BITEXACT-VIEW rank=7 exact=True max|d|=0
+BITEXACT-VIEW rank=2 exact=True max|d|=0
+BITEXACT-VIEW rank=0 exact=True max|d|=0
+BITEXACT-VIEW rank=4 exact=True max|d|=0
+BITEXACT-VIEW rank=6 exact=True max|d|=0
+BITEXACT-VIEW rank=5 exact=True max|d|=0
+BITEXACT-VIEW rank=3 exact=True max|d|=0
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=6 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3339 n=30BENCH rank=3 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3339 n=30BENCH rank=7 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3339 n=30BENCH rank=4 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3339 n=30
+
+BENCH rank=0 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3339 n=30BENCH rank=5 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3339 n=30BENCH rank=2 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3339 n=30
+BENCH rank=1 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3339 n=30
+
+
+
+
+[rank0]:[W813 07:28:53.678507314 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 64 --closure view --y-ref out/yref/m64]: 0
+W0813 07:28:55.993000 36330 site-packages/torch/distributed/run.py:874] 
+W0813 07:28:55.993000 36330 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:28:55.993000 36330 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:28:55.993000 36330 site-packages/torch/distributed/run.py:874] *****************************************
+KNOBS {'mma_tiler_mnk': (256, 64, 256), 'cluster_shape_mnk': (2, 1, 1), 'group_hint': 512, 'flag_batch': 4, 'epi_flag_batch': (1, 2), 'token_back_mode': 'epi_warps', 'load_balance_mode': 'atomic_counter'}
+BITEXACT rank=7 exact=True max|d|=0
+BITEXACT rank=2 exact=True max|d|=0
+BITEXACT rank=5 exact=True max|d|=0
+BITEXACT rank=4 exact=True max|d|=0
+BITEXACT rank=1 exact=True max|d|=0
+BITEXACT rank=3 exact=True max|d|=0
+BITEXACT rank=6 exact=True max|d|=0
+BITEXACT rank=0 exact=True max|d|=0
+MANIFEST warmup mode=bench tokens=64 combine=bf16 ikr=False experts=384 topk=6 h=7168 i=3072
+BITEXACT-VIEW rank=3 exact=True max|d|=0BITEXACT-VIEW rank=7 exact=True max|d|=0BITEXACT-VIEW rank=0 exact=True max|d|=0
+
+
+BITEXACT-VIEW rank=6 exact=True max|d|=0
+BITEXACT-VIEW rank=5 exact=True max|d|=0
+BITEXACT-VIEW rank=2 exact=True max|d|=0
+BITEXACT-VIEW rank=4 exact=True max|d|=0
+BITEXACT-VIEW rank=1 exact=True max|d|=0
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH rank=4 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3300 n=30BENCH rank=1 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3300 n=30
+BENCH rank=5 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3300 n=30
+
+BENCH rank=7 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3300 n=30BENCH rank=2 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3300 n=30
+
+BENCH rank=6 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3300 n=30BENCH rank=0 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3300 n=30
+
+BENCH rank=3 tokens=64 combine=bf16 ikr=False knobs=none closure=view median_ms=0.3300 n=30
+[rank0]:[W813 07:29:23.449843079 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+RET[scripts/megamoe_iket_driver.py --mode bench --tokens 64 --closure view --knob mma_tiler_mnk=(256,64,256) --knob epi_flag_batch=(1,2) --y-ref out/yref/m64]: 0
+W0813 07:29:26.859000 36676 site-packages/torch/distributed/run.py:874] 
+W0813 07:29:26.859000 36676 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 07:29:26.859000 36676 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 07:29:26.859000 36676 site-packages/torch/distributed/run.py:874] *****************************************
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+/home/jessie/iket-lab/flashinfer/flashinfer/testing/utils.py:1660: UserWarning: CUPTI is not installed. Try 'pip install -U cupti-python'. Falling back to CUDA events for benchmarking.
+  return bench_gpu_time_with_cupti(
+BENCH-DG rank=5 tokens=64 median_ms=0.3195 n=30
+BENCH-DG rank=3 tokens=64 median_ms=0.3195 n=30
+BENCH-DG rank=4 tokens=64 median_ms=0.3195 n=30
+BENCH-DG rank=6 tokens=64 median_ms=0.3195 n=30
+BENCH-DG rank=7 tokens=64 median_ms=0.3195 n=30
+BENCH-DG rank=2 tokens=64 median_ms=0.3195 n=30
+BENCH-DG rank=0 tokens=64 median_ms=0.3195 n=30
+BENCH-DG rank=1 tokens=64 median_ms=0.3195 n=30
+RET[scripts/megamoe_deepgemm_driver.py --tokens 64]: 0

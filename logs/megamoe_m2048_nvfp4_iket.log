@@ -1,0 +1,35 @@
+[run-iket] Removing existing output directory: /home/jessie/iket-lab/out/megamoe_m2048_nvfp4
+[run-iket] ============= Dry run application first to collect some info... =============
+W0813 04:41:58.527000 27755 site-packages/torch/distributed/run.py:874] 
+W0813 04:41:58.527000 27755 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 04:41:58.527000 27755 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 04:41:58.527000 27755 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=profile tokens=2048 combine=nvfp4 ikr=False experts=384 topk=6 h=7168 i=3072
+MANIFEST exec=0 tokens=2048 combine=nvfp4 ikr=False
+[rank0]:[W813 04:42:27.063796249 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+Using user-specified max-ts-cnt-per-warp: 8192
+
+[run-iket] Auto-computed context buffer size: 17.11 GB (18,367,013,068 bytes)
+[run-iket] WARNING: IKET will allocate 17.11 GB of device memory for warp buffers. This may cause the workload to run out of GPU memory. Consider using --context-buffer-size to set a smaller value, or reduce the number of instrumented kernel launches.
+[run-iket] ============= Run application for real profiling... =============
+W0813 04:42:31.576000 28125 site-packages/torch/distributed/run.py:874] 
+W0813 04:42:31.576000 28125 site-packages/torch/distributed/run.py:874] *****************************************
+W0813 04:42:31.576000 28125 site-packages/torch/distributed/run.py:874] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0813 04:42:31.576000 28125 site-packages/torch/distributed/run.py:874] *****************************************
+MANIFEST warmup mode=profile tokens=2048 combine=nvfp4 ikr=False experts=384 topk=6 h=7168 i=3072
+MANIFEST exec=0 tokens=2048 combine=nvfp4 ikr=False
+[rank0]:[W813 04:43:00.543759274 ProcessGroupNCCL.cpp:1648] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6e23.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6e26.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6e28.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6e2a.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6e24.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6e29.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6e25.trace.json
+[run-iket] Warning: decoded_results.json missing stringTable or locationTable. This may indicate an older C++ injection library was used.
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6ddd.trace.json
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket_pid_0x6e27.trace.json
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/tracker
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/gen-config
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/megamoe_m2048_nvfp4/iket

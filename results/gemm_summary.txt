@@ -1,0 +1,19 @@
+
+=== out/gemm/iket_pid_0xc73.trace.json (3 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfergemmkernelsdense_blockscaled_gemm_sm10
+  grid=(2,1,74) block=(192,1,1) warps=888 markers=0 wall(first-warp-start -> last-warp-end)=39.9 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  kernel_e2e            888    27640.3    31126.4      29920      39040      39072
+  epi_main              592    19592.3    33095.0      29216      38208      38272
+  epi_tile             2048    19523.1     9532.8       9280      10880      11072
+  epi_acc_wait         2048    16254.0     7936.5       7648       9216       9312
+  tma_main              148     4719.9    31891.5      27872      37024      37024
+  tma_tile              512     4510.3     8809.2       9088       9472       9568
+  tma_acquire         14336     2887.1      201.4        192        736        800
+  mma_main              148     2670.6    18044.5      27424      37088      37120
+  mma_tile              512     2594.5     5067.4       8416       9536       9568
+  tma_issue           14336      614.8       42.9         32        128        384
+  prologue              888      293.2      330.2        320        384        384
+  mma_ab_wait          7168      268.3       37.4         32        256        576
+  mma_acc_acquire       256      117.0      457.1        608        704        768

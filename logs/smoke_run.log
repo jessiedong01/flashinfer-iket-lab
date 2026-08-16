@@ -1,0 +1,42 @@
+[run-iket] Removing existing output directory: /home/jessie/iket-lab/out/smoke
+[run-iket] ============= Dry run application first to collect some info... =============
+/home/jessie/cutlass/examples/python/CuTeDSL/dsl_tutorials/fp16_gemm_4_iket.py:810: DeprecationWarning: Migrated to examples/CuTeDSL/helpers/dynamic_persistent_tile_scheduler.py (BSD-3). The wheel copy will be removed in a future release.
+  preferred_tile_sched_params = utils.ClcDynamicPersistentTileSchedulerParams(
+/home/jessie/cutlass/examples/python/CuTeDSL/dsl_tutorials/fp16_gemm_4_iket.py:828: DeprecationWarning: Migrated to examples/CuTeDSL/helpers/dynamic_persistent_tile_scheduler.py (BSD-3). The wheel copy will be removed in a future release.
+  fallback_tile_sched_params = utils.ClcDynamicPersistentTileSchedulerParams(
+===================================================================
+Running Blackwell fp16 GEMM example 4 (with MIX cluster support):
+  mnk:                        [512, 1024, 64]
+  tolerance:                  0.1
+  Preferred cluster shape:    (2, 4, 1)
+  Fallback cluster shape:     (2, 1, 1)
+  CTA tile shape (MNK):       (256, 256, 64)
+===================================================================
+
+Verifying reference result...
+PASS
+[run-iket] Auto-computed context buffer size: 0.00 GB (166,924 bytes)
+[run-iket] ============= Run application for real profiling... =============
+/home/jessie/cutlass/examples/python/CuTeDSL/dsl_tutorials/fp16_gemm_4_iket.py:810: DeprecationWarning: Migrated to examples/CuTeDSL/helpers/dynamic_persistent_tile_scheduler.py (BSD-3). The wheel copy will be removed in a future release.
+  preferred_tile_sched_params = utils.ClcDynamicPersistentTileSchedulerParams(
+/home/jessie/cutlass/examples/python/CuTeDSL/dsl_tutorials/fp16_gemm_4_iket.py:828: DeprecationWarning: Migrated to examples/CuTeDSL/helpers/dynamic_persistent_tile_scheduler.py (BSD-3). The wheel copy will be removed in a future release.
+  fallback_tile_sched_params = utils.ClcDynamicPersistentTileSchedulerParams(
+===================================================================
+Running Blackwell fp16 GEMM example 4 (with MIX cluster support):
+  mnk:                        [512, 1024, 64]
+  tolerance:                  0.1
+  Preferred cluster shape:    (2, 4, 1)
+  Fallback cluster shape:     (2, 1, 1)
+  CTA tile shape (MNK):       (256, 256, 64)
+===================================================================
+
+Verifying reference result...
+PASS
+[run-iket] Dumped perfetto trace to /home/jessie/iket-lab/out/smoke/iket_pid_0xa61.pftrace
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/smoke/iket_pid_0xa61.trace.json
+[run-iket] Dumped compressed trace to /home/jessie/iket-lab/out/smoke/iket_pid_0xa61.pftrace.gz
+[run-iket] Dumped perfetto HTML viewer to /home/jessie/iket-lab/out/smoke/iket_pid_0xa61.html
+[run-iket] To view: cd /home/jessie/iket-lab/out/smoke && python3 -m http.server 8080 , then open http://localhost:8080/iket_pid_0xa61.html
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/smoke/tracker
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/smoke/gen-config
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/smoke/iket

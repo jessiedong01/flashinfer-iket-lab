@@ -1,0 +1,18 @@
+[run-iket] Removing existing output directory: /home/jessie/iket-lab/out/rmsnorm
+[run-iket] ============= Dry run application first to collect some info... =============
+ran m=2048 h=7168 dtype=bfloat16 iters=2
+y_fp4 (2048, 3584) torch.float4_e2m1fn_x2, scales (2048, 448) torch.float8_e4m3fn
+ref row-norm max |y|: 9.707 (sanity only)
+[run-iket] Auto-computed context buffer size: 0.00 GB (2,260,992 bytes)
+[run-iket] ============= Run application for real profiling... =============
+ran m=2048 h=7168 dtype=bfloat16 iters=2
+y_fp4 (2048, 3584) torch.float4_e2m1fn_x2, scales (2048, 448) torch.float8_e4m3fn
+ref row-norm max |y|: 9.707 (sanity only)
+[run-iket] Dumped perfetto trace to /home/jessie/iket-lab/out/rmsnorm/iket_pid_0xbdf.pftrace
+[run-iket] Dumped json trace to /home/jessie/iket-lab/out/rmsnorm/iket_pid_0xbdf.trace.json
+[run-iket] Dumped compressed trace to /home/jessie/iket-lab/out/rmsnorm/iket_pid_0xbdf.pftrace.gz
+[run-iket] Dumped perfetto HTML viewer to /home/jessie/iket-lab/out/rmsnorm/iket_pid_0xbdf.html
+[run-iket] To view: cd /home/jessie/iket-lab/out/rmsnorm && python3 -m http.server 8080 , then open http://localhost:8080/iket_pid_0xbdf.html
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/rmsnorm/tracker
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/rmsnorm/gen-config
+[run-iket] Removing intermediate output directory: /home/jessie/iket-lab/out/rmsnorm/iket

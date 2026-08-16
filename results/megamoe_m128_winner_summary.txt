@@ -1,0 +1,30 @@
+
+=== out/megamoe_m128_winner/iket_pid_0x920b.trace.json (0 instrumented launches) ===
+
+=== out/megamoe_m128_winner/iket_pid_0x9251.trace.json (3 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_fc1fc2_kernel_impl_moe_nvfp4_swapabmegamoe_kernelSm100M
+  grid=(2,1,74) block=(384,1,1) warps=1776 markers=0 wall(first-warp-start -> last-warp-end)=9064.7 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  produce_tile_id      5140   716406.5   139378.7       1792    4766368    4776448
+  tma_token_fc1        2304    28449.7    12348.0      11520      24032      25920
+  tma_weight_fc1       2304    28425.2    12337.3      11552      23520      25312
+  fc1_epi              9216    17204.9     1866.8       1088      13184      13696
+  mma_fc1              2304    14513.1     6299.1       5408      27104      30848
+  tma_weight_fc2       2688    12748.2     4742.6       4512      10848      13120
+  tma_token_fc2        2688    12734.8     4737.6       4512      10816      13120
+  mma_fc2              2688     6398.5     2380.4       1600       8608      12352
+  Dispatch_Barrier        1     4759.4  4759424.0    4759424    4759424    4759424
+  fc2_epi             10752     4281.3      398.2        352       2592       3744
+  tma_token_fc1_wait      590     2224.4     3770.3        224      14848      14880
+  tma_token_fc2_wait      224     1216.7     5431.7       5056      11456      11584
+  mma_acquire          2496      101.2       40.6         32         64        576
+  Pull.ChooseToken        3        9.2     3050.7       3008       4832       4832
+  Pull.TMA_NVLink_Roundtrip        2        6.4     3184.0       2464       3904       3904
+  Pull.Weight_LDG         2        3.5     1728.0       1504       1952       1952
+  Dispatch_Prep           1        2.5     2496.0       2496       2496       2496
+  Pull.SF_LDG_STG         2        1.5      736.0         32       1440       1440
+  Pull.TMA_Store          2        0.7      336.0        288        384        384
+  Pull.Arrival_Atomic        2        0.6      304.0        288        320        320
+
+=== out/megamoe_m128_winner/iket_pid_0x9252.trace.json (3 instrumented launches) ===

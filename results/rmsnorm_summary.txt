@@ -1,0 +1,12 @@
+
+=== out/rmsnorm/iket_pid_0xbdf.trace.json (3 instrumented launches) ===
+
+[eager] kernel=kernel_cutlass_kernel_flashinfercute_dslrmsnorm_fp4quantRMSNormFP4Quan
+  grid=(2048,1,1) block=(128,1,1) warps=8192 markers=0 wall(first-warp-start -> last-warp-end)=9.2 us
+  range               count   total_us    mean_ns     p50_ns     p99_ns     max_ns
+  kernel_e2e           8192    51862.9     6330.9       6272       8320       8608
+  quant_store          8192    17679.0     2158.1       2112       3008       3328
+  sumsq_reduce         8192    17292.2     2110.9       1824       3584       3936
+  g2s_load             8192     5994.2      731.7        640       1920       3168
+  setup                8192     2428.3      296.4        192       1600       2368
+  post_sync            8192      833.7      101.8         96        384        736
